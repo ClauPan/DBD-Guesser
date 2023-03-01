@@ -20,9 +20,7 @@ as "player" you can rate any played playlist
 the location guesser game consists of going through all the images in the playlist
 the score is based on accuracy of location and time taken
 
-====================================================================================
-===============================POSSIBLE EXTRA STUFF=================================
-====================================================================================
+=======POSSIBLE EXTRA STUFF======
 
 trivia questions about the game
 guess the killer by sound
