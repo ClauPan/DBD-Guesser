@@ -1,3 +1,10 @@
+Panait Claudia Oana
+
+Tudor Ana-Maria
+
+Mares Mihai Alexandru
+
+
 as "user" you can create a "playlist" for the main game
 
 as "user" you can play a "playlist" for the main game
