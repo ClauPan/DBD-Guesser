@@ -49,3 +49,7 @@ trivia questions about the game
 
 guess the killer by sound
 
+
+===========FIGMA LINK===========
+
+https://www.figma.com/file/2xUpfgHjelAdL5BTJG5eOQ/WAD?t=GKGqx5gsYzobtgBl-6
