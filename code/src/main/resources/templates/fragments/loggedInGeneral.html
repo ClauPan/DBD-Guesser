@@ -1,0 +1,18 @@
+<div th:fragment="top" class="header-container">
+  <div class="header">
+    <span class="header-text">
+      <a href="/"><img  th:src="@{/images/logo.png}"/></a>
+    </span>
+  </div>
+  <nav>
+    <div>
+      <form action="#" th:action="@{/profile}" method="get">
+        <label>
+          <img th:src="@{/images/image.png}" th:alt="Profile">
+          <input type="submit" name="profile" value="Profile" />
+        </label>
+      </form>
+    </div>
+    <a href="/logout" class="logout-button">Logout</a>
+  </nav>
+</div>

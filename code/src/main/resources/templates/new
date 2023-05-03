@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="title">
+            <input  type="hidden" value="#002366" name="#002366">
+            <input  class="all" type="image" src="" width="75%" id="geoQuiz" value="geo" onmouseover=""
+                        onmouseout="" th:href="/geo">
+
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="title">
+            <input type="hidden" value="darkred" name="darkred">
+            <input class="all" type="image" src="" width="75%" id="triviaQuiz" value="trivia" onmouseover=""
+                       onmouseout="" th:href="/trivia">
+        </div>
+    </div>
+</div>
+
+style="background: url('/images/image.png') no-repeat;"
+
+ style="background: url('/images/image.png') no-repeat;"
+
+ nav form input{
+     margin-right: 50px;
+     width: 50px;
+     height: 50px;
+     border: none;
+ }

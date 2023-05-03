@@ -1,0 +1,287 @@
+body {
+    height:100%;
+    width:960px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #191826;
+    background-image: url("../images/dbd1.png");
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 70px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 150px;
+    top:20px
+}
+.header img {
+    margin-right: 20px;
+    alignment: left;
+    width: 170px;
+}
+.header-text {
+    display: flex;
+    align-items: center;
+}
+.header-text a {
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 32px;
+    color:brown;
+}
+nav {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 150px;
+    padding: 20px 50px 20px calc(100vw - 800px);
+    border-radius: 20px;
+    background: linear-gradient(to right, rgba(40, 43, 43, 0.1), rgba(40, 43, 43, 1));
+}
+nav form {
+    margin-right: 20px;
+}
+.form-element {
+    margin-top:100px;
+    margin-bottom:100px;
+}
+nav label {
+    display: flex;
+    align-items: center;
+}
+nav img {
+    margin-right: 50px;
+    width: 40px;
+    height: 40px;
+}
+nav input[type="submit"] {
+    display: none;
+}
+nav a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2B1B1E;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 40px;
+}
+nav a:hover {
+    background-color: #56373D;
+}
+.error-element {
+    color:red;
+    font-weight:bold;
+}
+.button {
+    width: 400px;
+    height: 400px;
+    margin-left: 100px;
+    margin-right: 100px;
+    position: relative;
+    border: none;
+}
+.button-container {
+    display: inline-block;
+}
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+@media screen and (max-width: 767px) {
+    /* Apply these styles when the screen width is 767px or less */
+    .button-wrapper {
+        flex-direction: column;
+    }
+    .button-container {
+        margin-bottom: 100px;
+    }
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .header {
+        position: static;
+        margin-bottom: 20px;
+    }
+    nav {
+        position: static;
+        margin-top: 20px;
+    }
+}
+.button-container input[id="main"] {
+    background: url('../images/image.png') no-repeat;
+}
+.button-container input[id="main"]:hover {
+    background: url('../images/images1.png') no-repeat;
+}
+.button-container input[id="trivia"] {
+    background: url('../images/image.png') no-repeat;
+}
+.button-container input[id="trivia"]:hover {
+    background: url('../images/images1.png') no-repeat;
+}
+.button-wrapper-p {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+    margin-top: 200px;
+}
+.button-container-p {
+    display: inline-block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #A88389;
+}
+.playlist {
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    position: relative;
+}
+.playlist:hover {
+    opacity: 0.5;
+}
+.button-container-p span{
+    background-color: #282b2b;
+    padding: 5px;
+    border-radius: 2px;
+    font-size: 20px;
+}
+@media only screen and (max-width: 800px) {
+    .button-wrapper-p {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media only screen and (max-width: 600px) {
+    .button-wrapper-p {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width: 400px) {
+    .button-wrapper-p {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/back.png");
+    margin-top: 80px;
+    height: 800px;
+}
+.title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: -300px;
+}
+.title img {
+    margin-left: 500px;
+    width: 150px;
+    height: 150px;
+}
+.title-text span{
+    text-align: center;
+    font-size: 40px;
+    color: brown;
+    font-weight: bolder;
+    background-color: #323737;
+    padding: 20px;
+    border-radius: 20px;
+}
+.description {
+    display: flex;
+    align-items: center; /* aligns items along the center */
+    justify-content: space-between;
+}
+.description span[id="desc"]{
+    text-align: left;
+    font-size: 20px;
+    color: brown;
+    font-weight: bold;
+    margin-right: 300px;
+    margin-top: -140px;
+    background-color: #323737;
+    padding: 20px;
+    border-radius: 20px;
+}
+.description span[id="rating"]{
+    text-align: center;
+    font-size: 30px;
+    color: brown;
+    font-weight: bolder;
+    margin-left: 295px;
+    margin-top: 10px;
+}
+.user{
+    text-align: center;
+    font-size: 20px;
+    color: brown;
+    font-weight: bold;
+    background-color: #323737;
+    padding: 20px;
+    border-radius: 20px;
+
+}
+button.btn-primary {
+    background-color: #2B1B1E;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    border: none;
+    margin-bottom: 40px;
+    margin-top: 50px;
+}
+button.btn-primary:hover {
+    background-color: #56373D;
+    color: #fff;
+}
+@media only screen and (max-width: 768px) {
+    .container {
+        height: auto;
+        width: auto;
+    }
+    .title {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+    }
+    .title-text{
+        margin-bottom: 40px;
+    }
+    .title img {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    .description{
+        flex-direction: column;
+        align-items: center;
+    }
+    .description span[id="desc"]{
+        margin-right: 0;
+        margin-top: 10px;
+    }
+    .description span[id="rating"]{
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
