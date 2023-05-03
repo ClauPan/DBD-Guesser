@@ -34,7 +34,7 @@ public class DataLoader implements CommandLineRunner {
     Playlist playlist2 = new Playlist("playlist2", "trivia", "desc2", "../images/image.png", user2);
     Playlist playlist3 = new Playlist("playlist3", "geo", "desc3", "../images/image.png", user2);
     Playlist playlist4 = new Playlist("playlist4", "geo", "desc3", "../images/image.png", user2);
-    Playlist playlist5 = new Playlist("playlist4", "geo", "desc3", "../images/image.png", user2);
+    Playlist playlist5 = new Playlist("playlist5", "geo", "desc3", "../images/image.png", user2);
 
     playlistService.save(playlist1);
     playlistService.save(playlist2);
