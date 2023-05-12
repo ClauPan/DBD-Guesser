@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Login Page</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" th:href="@{/css/main.css}" type="text/css"/>
-</head>
+<head th:include="fragments/headers :: head"></head>
 <body class="login">
-    <h1>Login</h1>
-    <p th:if="${loginError}" class="error">Wrong user or password</p>
-    <form th:action="@{/auth/login}" method="post" class="login-form">
-        <div class="username">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" autofocus="autofocus" />
-        </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" />
-        </div>
-        <input type="submit" value="Log in" class="submit-btn" />
-    </form>
+<h1>Login</h1>
+<p th:if="${loginError}" class="error">Wrong user or password</p>
+<form th:action="@{/auth/login}" method="post" class="login-form">
+    <div class="username">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" autofocus="autofocus" />
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" />
+    </div>
+    <input type="submit" value="Log in" class="submit-btn" />
+</form>
 </body>
 </html>

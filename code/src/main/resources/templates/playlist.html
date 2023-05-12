@@ -1,33 +1,27 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <title>Playlists</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" th:href="@{/css/main.css}" type="text/css"/>
-  </head>
-  <body>
-    <div th:replace="fragments/nav :: top"/>
-    <div class="container">
-      <div class="title">
+<head th:include="fragments/headers :: head"></head>
+<body>
+<div th:replace="fragments/nav :: top"/>
+<div class="container">
+    <div class="title">
         <div class="title-text">
-          <span th:text="${playlist.name}"></span><br>
+            <span th:text="${playlist.name}"></span><br>
         </div>
         <img th:src="${playlist.thumbnail}"><br>
-      </div>
-      <div class="description">
+    </div>
+    <div class="description">
         <span id="desc" th:text="${playlist.description}"></span><br>
         <span id="rating" th:text="${playlist.rating}"></span><br>
-      </div>
-        <form action="#" th:action="@{/geo}" method="get">
-          <button type="submit" name="pid" th:value="${playlist.id}" class="btn btn-primary">Play</button>
-        </form>
-      <div class="user">
+    </div>
+    <form action="#" th:action="@{/geo}" method="get">
+        <button type="submit" name="pid" th:value="${playlist.id}" class="btn btn-primary">Play</button>
+    </form>
+    <div class="user">
         <label >Playlist created by</label>
         <span th:text="${playlist.user.username}"></span><br>
-      </div>
     </div>
-    </div>
-  </body>
+</div>
+</body>
 </html>

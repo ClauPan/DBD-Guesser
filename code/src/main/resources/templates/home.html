@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
-    <title>Home page</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" th:href="@{/css/main.css}" type="text/css"/>
-</head>
+      xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/headers :: head"></head>
 <body>
-    <div th:replace="fragments/nav :: top"/>
-    <div class="button-wrapper">
-        <div class="button-container">
-            <form action="#" th:action="@{/playlists}" method="get">
-                <input class="button" type="submit" id="main" name="ptype" value="1"/>
-            </form>
-        </div>
-        <div class="button-container">
-            <form action="#" th:action="@{/playlists}" method="get">
-                <input class="button" type="submit" id="trivia" name="ptype" value="2"/>
-            </form>
-        </div>
+<div th:replace="fragments/nav :: top"></div>
+<div class="button-wrapper">
+    <div class="button-container">
+        <form action="#" th:action="@{/playlists}" method="get">
+            <input class="button" type="submit" id="main" name="ptype" value="1"/>
+        </form>
     </div>
+    <div class="button-container">
+        <form action="#" th:action="@{/playlists}" method="get">
+            <input class="button" type="submit" id="trivia" name="ptype" value="2"/>
+        </form>
+    </div>
+</div>
 </body>
 </html>
