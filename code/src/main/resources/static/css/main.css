@@ -359,3 +359,7 @@ input[type="password"] {
     background-color: darkred;
     color: white;
 }
+.profile-info{
+    margin-top: 200px;
+    color: white;
+}

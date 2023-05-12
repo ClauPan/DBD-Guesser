@@ -4,7 +4,7 @@
 <head th:include="fragments/headers :: head"></head>
 <body>
 <div th:replace="fragments/nav :: top"/>
-<div th:object="${profile}">
+<div th:object="${profile}" class="profile-info">
     <span th:text="${profile.username}"/><br>
     <span th:text="${profile.email}"/><br>
 </div>
