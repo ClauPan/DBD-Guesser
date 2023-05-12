@@ -43,24 +43,27 @@ nav {
     border-radius: 20px;
     background: linear-gradient(to right, rgba(40, 43, 43, 0.1), rgba(40, 43, 43, 1));
 }
-nav form {
-    margin-right: 20px;
-}
-.form-element {
-    margin-top:100px;
-    margin-bottom:100px;
-}
-nav label {
+.logged{
     display: flex;
     align-items: center;
 }
-nav img {
+.profile {
+    display: flex;
+    align-items: center;
     margin-right: 50px;
+}
+button.profilePic {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+}
+.profile img {
     width: 40px;
     height: 40px;
 }
-nav input[type="submit"] {
-    display: none;
+.profileName{
+    color: white;
 }
 nav a {
     display: inline-block;
@@ -86,14 +89,6 @@ nav a:hover {
     position: relative;
     border: none;
 }
-
-button.profile {
-    border: none;
-    cursor: pointer;
-    appearance: none;
-    background-color: inherit;
-}
-
 .button-container {
     display: inline-block;
 }
@@ -292,4 +287,56 @@ button.btn-primary:hover {
         margin-left: 0;
         margin-top: 10px;
     }
+}
+.login{
+    height:100%;
+    width:960px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #191826;
+    background-image: url("../images/load.gif");
+}
+.login h1{
+    color: white;
+}
+.error{
+    color: white;
+}
+.login-form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+.user{
+    margin-left: -100px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
 }
