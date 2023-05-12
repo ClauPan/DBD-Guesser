@@ -8,6 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class ProfileController {
+
+    @GetMapping("/profile/_")
+    public String profileRedirect() {
+        return "redirect:/profile";
+    }
+
+
     @GetMapping("/profile")
     public String showUserProfile(Authentication authentication, Model model) {
         User user = (User) authentication.getPrincipal();

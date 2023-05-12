@@ -14,9 +14,9 @@
         </div>
         <div sec:authorize="isAuthenticated()" class="logged">
             <div class="profile">
-                <button class="profilePic" type="submit" th:action="@{/profile}" >
-                    <img th:src="@{${#authentication.getPrincipal()['profilePic']}}" th:alt="Profile" >
-                </button>
+                <form th:action="@{/profile/_}" method="GET">
+                    <input type="image" th:src="@{${#authentication.principal['profilePic']}}" th:alt="Profile"/>
+                </form>
                 <div class="profileName" th:text="${#authentication.name}"></div>
             </div>
             <a href="/auth/logout" class="logout-button">Logout</a>

@@ -9,7 +9,7 @@
 </head>
 <body>
 <div th:replace="fragments/nav :: top"/>
-<div th:each="profile : ${profile}">
+<div th:object="${profile}">
   <span th:text="${profile.username}">username</span>
   <span th:text="${profile.email}">username</span>
 </div>
