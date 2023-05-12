@@ -86,6 +86,14 @@ nav a:hover {
     position: relative;
     border: none;
 }
+
+button.profile {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+}
+
 .button-container {
     display: inline-block;
 }

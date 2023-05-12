@@ -25,6 +25,7 @@ public class User implements UserDetails {
   private String username;
   private String password;
   private String email;
+  private String profilePic;
   // instead of @OneToMany when having collection of basic types or enums
   @ElementCollection(fetch = FetchType.EAGER)
   private List<Role> roles=new ArrayList<>();
@@ -33,6 +34,7 @@ public class User implements UserDetails {
     this.username = username;
     this.password = password;
     this.email = email;
+    this.profilePic = "/images/image.png";
   }
 
   @Override

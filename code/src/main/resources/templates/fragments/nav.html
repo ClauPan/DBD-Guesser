@@ -14,13 +14,11 @@
         </div>
         <div sec:authorize="isAuthenticated()">
             <div>
-                <form action="#" th:action="@{/profile}" method="get">
-                    <label>
-                        <img th:src="@{/images/image.png}" th:alt="Profile">
-                        <input type="submit" name="profile" value="Profile" />
-                    </label>
-                </form>
+                <button class="profile" type="submit" th:action="@{/profile}" style="margin: 0; padding: 0">
+                    <img th:src="@{${#authentication.getPrincipal()['profilePic']}}" th:alt="Profile" style="margin: 0; padding: 0">
+                </button>
             </div>
+            <div th:text="${#authentication.name}"></div>
             <a href="/auth/logout" class="logout-button">Logout</a>
         </div>
     </nav>
