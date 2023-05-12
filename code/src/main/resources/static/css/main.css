@@ -296,6 +296,19 @@ button.btn-primary:hover {
     margin-right: auto;
     background-color: #191826;
     background-image: url("../images/load.gif");
+
+}
+.login-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 .login h1{
     color: white;
@@ -303,41 +316,63 @@ button.btn-primary:hover {
 .error{
     color: white;
 }
-.login-form {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
+.login-form{
+    margin-top: 250px;
     display: flex;
     align-items: center;
 }
-.user{
-    margin-left: -100px;
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: -50px;
+}
+.username{
+    margin-right: 100px;
+    margin-left: -80px;
+    text-align: center;
+}
+.pass{
+    margin-left: 650px;
+    text-align: center;
 }
 label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: white;
+    justify-self: center;
 }
 input[type="text"],
 input[type="password"] {
-    width: 100%;
+    width: 200px;
     padding: 12px;
     border: 2px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
 }
-
+.log-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
 .submit-btn {
-    width: 100%;
+    width: 20%;
     padding: 12px;
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: lightgrey;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
 }
-
 .submit-btn:hover {
-    background-color: #45a049;
+    background-color: darkred;
+    color: white;
 }
