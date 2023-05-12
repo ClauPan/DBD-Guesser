@@ -11,6 +11,7 @@ import java.io.Serializable;
 public class UserData implements Serializable {
     private String username;
     private String password;
+    private String email;
 
     public void encode() {
         PasswordEncoder bcrypt = new BCryptPasswordEncoder();

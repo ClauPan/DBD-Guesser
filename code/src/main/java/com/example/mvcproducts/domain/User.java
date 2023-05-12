@@ -24,13 +24,15 @@ public class User implements UserDetails {
 
   private String username;
   private String password;
+  private String email;
   // instead of @OneToMany when having collection of basic types or enums
   @ElementCollection(fetch = FetchType.EAGER)
   private List<Role> roles=new ArrayList<>();
 
-  public User(String username, String password) {
+  public User(String username, String password, String email) {
     this.username = username;
     this.password = password;
+    this.email = email;
   }
 
   @Override

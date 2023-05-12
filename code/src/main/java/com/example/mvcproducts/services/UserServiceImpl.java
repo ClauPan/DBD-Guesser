@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
   }
 
   public void save(UserData userData) {
-    User newUser = new User(userData.getUsername(), userData.getPassword());
+    User newUser = new User(userData.getUsername(), userData.getPassword(), userData.getEmail());
     User user = userRepository.findByUsername(userData.getUsername());
     if (user == null) {
       newUser.getRoles().add(Role.ROLE_USER);

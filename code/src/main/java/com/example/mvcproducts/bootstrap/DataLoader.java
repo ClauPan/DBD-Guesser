@@ -23,9 +23,9 @@ public class DataLoader implements CommandLineRunner {
   @Override
   public void run(String... args) {
     PasswordEncoder bcrypt = new BCryptPasswordEncoder();
-    User user1=new User("user1",bcrypt.encode("user1"));
+    User user1=new User("user1",bcrypt.encode("user1"), "user1@gmail.com");
     user1.getRoles().add(Role.ROLE_USER);
-    User user2=new User("user2",bcrypt.encode("user2"));
+    User user2=new User("user2",bcrypt.encode("user2"), "user2@gmail.com");
     user2.getRoles().add(Role.ROLE_ADMIN);
     userService.save(user1);
     userService.save(user2);

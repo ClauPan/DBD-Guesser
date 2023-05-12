@@ -11,6 +11,7 @@
 <div th:replace="fragments/nav :: top"/>
 <div th:each="profile : ${profile}">
   <span th:text="${profile.username}">username</span>
+  <span th:text="${profile.email}">username</span>
 </div>
 </body>
 </html>
