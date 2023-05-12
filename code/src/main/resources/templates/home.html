@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <link rel="stylesheet" th:href="@{/css/main.css}" type="text/css"/>
-        <title>Home page</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
-    </head>
-    <body>
-    <div th:replace="fragments/loggedInGeneral :: top"/>
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Home page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" th:href="@{/css/main.css}" type="text/css"/>
+</head>
+<body>
+    <div th:replace="fragments/nav :: top"/>
     <div class="button-wrapper">
         <div class="button-container">
             <form action="#" th:action="@{/playlists}" method="get">
@@ -21,5 +22,5 @@
             </form>
         </div>
     </div>
-    </body>
+</body>
 </html>

@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" th:href="@{/css/main.css}" type="text/css"/>
     <title>Playlists</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" th:href="@{/css/main.css}" type="text/css"/>
 </head>
 <body>
-<div th:replace="fragments/loggedInGeneral :: top"/>
+<div th:replace="fragments/nav :: top"/>
 
 <div class="button-wrapper-p">
     <div th:each="playlist : ${playlists}" >

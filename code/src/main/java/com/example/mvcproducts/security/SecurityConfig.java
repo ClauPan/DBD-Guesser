@@ -7,14 +7,12 @@ import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.http.HttpMethod;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import static org.springframework.security.config.Customizer.withDefaults;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.thymeleaf.extras.springsecurity5.dialect.SpringSecurityDialect;
 
 @Configuration
 public class SecurityConfig {
@@ -44,16 +42,29 @@ public class SecurityConfig {
                 .build();
     }
 
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeRequests()
-                .requestMatchers("/","/css/**","/images/**", "/register").permitAll()
-                .and().authorizeRequests()
-                .requestMatchers(HttpMethod.GET, "/playlists/**").hasAnyRole("USER", "ADMIN")
-                .anyRequest().authenticated()
-                .and().formLogin(withDefaults()).httpBasic()
-                .and().csrf().disable();
+                .authorizeHttpRequests()
+                    .requestMatchers("/","/css/**","/images/**", "/auth/login")
+                    .permitAll()
+                .and()
+                .authorizeHttpRequests()
+                    .requestMatchers(HttpMethod.GET, "/playlists/**")
+                    .hasAnyRole("USER", "ADMIN")
+                    .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                    .loginPage("/auth/login")
+                    .failureUrl("/auth/login-error")
+                .and()
+                .logout()
+                    .logoutRequestMatcher(new AntPathRequestMatcher("/auth/logout"))
+                    .logoutSuccessUrl("/").deleteCookies("JSESSIONID")
+                    .invalidateHttpSession(true)
+                .and()
+                .csrf().disable();
         return http.build();
     }
 }

@@ -12,22 +12,5 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class RegistrationController {
 
-    private UserService userService;
 
-    public RegistrationController(UserService userService) {
-        this.userService = userService;
-    }
-
-    @GetMapping("/register")
-    public String register(final Model model){
-        model.addAttribute("userData", new UserData());
-        return "/register";
-    }
-
-    @PostMapping("/register")
-    public String userRegistration(UserData userData){
-        userData.encode();
-        userService.save(userData);
-        return "/home";
-    }
 }
