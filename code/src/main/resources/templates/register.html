@@ -4,13 +4,25 @@
 <body>
 <h1>Register page</h1>
 <form th:action="@{/auth/register}" method="post">
-  <label for="username">Username</label>:
-  <input type="text" id="username" name="username" autofocus="autofocus" /> <br />
-  <label for="email">Email</label>:
-  <input type="text" id="email" name="email" /> <br />
-  <label for="password">Password</label>:
-  <input type="password" id="password" name="password" /> <br />
-  <input type="submit" value="Log in" />
+  <div class="center-container">
+    <div class="email">
+      <label for="email">Email</label>:
+      <input type="text" id="email" name="email" />
+    </div>
+  </div>
+  <div class="login-form">
+    <div class="username">
+      <label for="username">Username</label>:
+      <input type="text" id="username" name="username" autofocus="autofocus" />
+    </div>
+    <div class="pass">
+      <label for="password">Password</label>:
+      <input type="password" id="password" name="password" />
+    </div>
+  </div>
+  <div class="log-btn">
+    <input type="submit" value="Register" class="submit-btn"/>
+  </div>
 </form>
 </body>
 </html>
