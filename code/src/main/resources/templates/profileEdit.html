@@ -17,15 +17,14 @@
         <span th:text="${profile.username}"/><br>
     </div>
     <div>
-        <form th:action="@{/profile/reset/username}">
+        <form th:action="@{/profile/reset/username}" method="post">
             <h3>Reset Username</h3>
-            <input type="text" id="old_username" name="old_username" placeholder="Old Username">
-            <input type="text" id="new_username" name="new_username" placeholder="New Username">
+            <input type="text" id="new_name" name="new_name" placeholder="New Username">
             <input type="submit" value="Reset">
         </form>
     </div>
     <div>
-        <form th:action="@{/profile/reset/password}">
+        <form th:action="@{/profile/reset/password}" method="post">
            <h3>Reset Password</h3>
             <input type="password" id="old_pass" name="old_pass" placeholder="Old Password">
             <input type="password" id="new_pass" name="new_pass" placeholder="New Password">
@@ -33,7 +32,7 @@
         </form>
     </div>
     <div>
-        <form th:action="@{/profile/reset/email}">
+        <form th:action="@{/profile/reset/email}" method="post">
             <h3>Reset Email</h3>
             <input type="text" id="old_email" name="old_email" placeholder="Old Email">
             <input type="text" id="new_email" name="new_email" placeholder="New Email">

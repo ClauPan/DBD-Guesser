@@ -7,6 +7,9 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.parameters.P;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -61,5 +64,34 @@ public class ProfileController {
         HttpHeaders headers = new HttpHeaders();
         headers.setCacheControl(CacheControl.noCache().getHeaderValue());
         return new ResponseEntity<>(Files.readAllBytes(path), headers, HttpStatus.OK);
+    }
+
+    @PostMapping("/profile/reset/username")
+    public String changeUsername(Authentication authentication, @RequestParam("new_name") String newName) {
+        User user = (User) authentication.getPrincipal();
+        user.setUsername(newName);
+        userService.save(user);
+        return "redirect:/profile";
+    }
+
+    @PostMapping("/profile/reset/password")
+    public String changePassword(Authentication authentication, @RequestParam("old_pass") String oldPass, @RequestParam("new_pass") String newPass) {
+        PasswordEncoder bcrypt = new BCryptPasswordEncoder();
+        User user = (User) authentication.getPrincipal();
+        if (bcrypt.matches(oldPass, user.getPassword())) {
+            user.setPassword(bcrypt.encode(newPass));
+        }
+        userService.save(user);
+        return "redirect:/profile";
+    }
+
+    @PostMapping("/profile/reset/email")
+    public String changeEmail(Authentication authentication, @RequestParam("old_email") String oldEmail, @RequestParam("new_email") String newEmail) {
+        User user = (User) authentication.getPrincipal();
+        if (user.getEmail().equals(oldEmail)) {
+            user.setEmail(newEmail);
+        }
+        userService.save(user);
+        return "redirect:/profile";
     }
 }
