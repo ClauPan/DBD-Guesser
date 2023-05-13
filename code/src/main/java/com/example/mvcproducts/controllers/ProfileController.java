@@ -33,7 +33,7 @@ public class ProfileController {
     }
 
     @PostMapping("/profile/pic")
-    public String changeProfilePic(Authentication authentication, @RequestParam("img") file) throws IOException {
+    public String changeProfilePic(Authentication authentication, @RequestParam("img")MultipartFile file) throws IOException {
         User user = (User) authentication.getPrincipal();
         System.out.println(PROFILE_PIC_DIR + "\\" + user.getId().toString() + "\\" + file.getOriginalFilename());
 
