@@ -8,8 +8,8 @@
 
 <div class="profile-info" th:object="${profile}">
     <div>
-        <img th:src="@{${profile.profilePic}}" style="width: 100px; height: 100px">
-        <form th:action="@{/profile/pic}" method="post">
+        <img th:src="@{'/images/profiles/'+${profile.id}+'_'+${profile.username}+'/profile.png'}" style="width: 100px; height: 100px">
+        <form th:action="@{/profile/pic}" method="post" enctype="multipart/form-data">
             <label for="img">Change profile picture:</label>
             <input type="file" id="img" name="img" accept="image/*">
             <input type="submit">

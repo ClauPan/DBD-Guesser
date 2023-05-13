@@ -15,7 +15,7 @@
         <div sec:authorize="isAuthenticated()" class="logged">
             <div class="profile">
                 <form th:action="@{/profile/_}" method="GET">
-                    <input type="image" th:src="@{${#authentication.principal['profilePic']}}" th:alt="Profile"/>
+                    <input type="image" th:src="@{'/images/profiles/'+${#authentication.principal['id']}+'_'+${#authentication.principal['username']}+'/profile.png'}" th:alt="Profile"/>
                 </form>
                 <div class="profileName" th:text="${#authentication.name}"></div>
             </div>
