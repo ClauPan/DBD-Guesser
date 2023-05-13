@@ -6,7 +6,7 @@
 <div th:replace="fragments/nav :: top"/>
 
 
-<div class="profilePage" th:object="${profile}" style="padding-top: 50px">
+<div class="profile-info" th:object="${profile}">
     <div>
         <img th:src="@{${profile.profilePic}}" style="width: 100px; height: 100px">
         <form th:action="@{/profile/pic}" method="post">

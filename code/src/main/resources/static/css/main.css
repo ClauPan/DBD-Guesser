@@ -294,14 +294,15 @@ button.btn-primary:hover {
         margin-top: 10px;
     }
 }
-.login{
-    height:100%;
-    width:960px;
+.login {
+    height: 100%;
+    width: 960px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #191826;
+    background-color: black;
     background-image: url("../images/load.gif");
-
+    background-position:50% 40%;
+    background-repeat: no-repeat;
 }
 .login-center {
     display: flex;
@@ -321,64 +322,49 @@ button.btn-primary:hover {
 .error{
     color: white;
 }
-.login-form{
-    margin-top: 250px;
-    display: flex;
-    align-items: center;
-}
-.center-container {
-    display: flex;
+.login-form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
     justify-content: center;
     align-items: center;
 }
-.email {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: -100px;
+.form-login{
+    margin-top: 425px;
 }
-.username{
-    margin-right: 100px;
-    margin-left: -80px;
-    text-align: center;
-}
-.pass{
-    margin-left: 650px;
-    text-align: center;
+.form-group {
+    margin-bottom: 15px;
 }
 label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: darkred;
-    justify-self: center;
+    color: white;
 }
 input[type="text"],
 input[type="password"] {
-    width: 200px;
-    padding: 12px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-.log-btn{
-    display: flex;
-    justify-content: center;
-    margin-top: 200px;
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
 .submit-btn {
-    width: 20%;
-    padding: 12px;
-    background-color: lightgrey;
+    width: 96%;
+    padding: 10px;
+    background-color: lightgrey;;
     color: black;
     border: none;
-    border-radius: 5px;
+    border-radius: 3px;
     cursor: pointer;
-    font-size: 16px;
+    align-items: center;
 }
 .submit-btn:hover {
     background-color: darkred;
+    color: white;
+}
+.profile-info{
+    margin-top: 200px;
     color: white;
 }
