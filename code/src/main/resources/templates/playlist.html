@@ -9,19 +9,23 @@
         <div class="title-text">
             <span th:text="${playlist.name}"></span><br>
         </div>
-        <img th:src="${playlist.thumbnail}"><br>
+        <img th:src="'/images/playlists/'+${playlist.user.id}+'_'+${playlist.id}+'_'+${playlist.name}+'/thumb.png'"><br>
     </div>
     <div class="description">
         <span id="desc" th:text="${playlist.description}"></span><br>
-        <span id="rating" th:text="${playlist.rating}"></span><br>
+        <span id="rating" th:text="${rating}"></span><br>
     </div>
     <form action="#" th:action="@{/geo}" method="get">
-        <button type="submit" name="pid" th:value="${playlist.id}" class="btn btn-primary">Play</button>
+        <button class="btn btn-primary" type="submit" name="pid" th:value="${playlist.id}">Play</button>
     </form>
     <div class="user">
-        <label >Playlist created by</label>
+        <label>Playlist created by</label>
         <span th:text="${playlist.user.username}"></span><br>
     </div>
+    <form action="#" th:action="@{/playlists}" method="get">
+        <input type="hidden" id="back" name="ptype" th:value="${playlist.type}">
+        <button class="btn btn-primary" type="submit">Back</button>
+    </form>
 </div>
 </body>
 </html>

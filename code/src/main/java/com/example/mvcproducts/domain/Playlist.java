@@ -18,19 +18,13 @@ public class Playlist {
 
     private String description;
 
-    private String thumbnail;
-
-    private double rating;
-
     @OneToOne
     private User user;
 
-    public Playlist(String name, String type, String desc, String thumbnail, User user) {
+    public Playlist(String name, String type, String desc, User user) {
         this.name = name;
         this.type = type;
         this.description = desc;
-        this.thumbnail = thumbnail;
         this.user = user;
-        this.rating = 0.0;
     }
 }

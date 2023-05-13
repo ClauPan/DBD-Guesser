@@ -16,12 +16,7 @@ public class PlaylistController {
 
     @GetMapping("/playlists")
     public String getPlaylists(Model model, @RequestParam String ptype) {
-        if (ptype.equals("1")) {
-            model.addAttribute("playlists", playlistService.getPlaylistsByType("geo"));
-        }
-        else {
-            model.addAttribute("playlists", playlistService.getPlaylistsByType("trivia"));
-        }
+        model.addAttribute("playlists", playlistService.getPlaylistsByType(ptype));
         return "playlists";
     }
 
@@ -29,6 +24,7 @@ public class PlaylistController {
     public String showPlaylist(Model model, @RequestParam Long pid) {
         System.out.println(pid);
         model.addAttribute("playlist", playlistService.getPlaylistById(pid));
+        model.addAttribute("rating", playlistService.getOverallRating(pid));
         return "playlist";
     }
 }

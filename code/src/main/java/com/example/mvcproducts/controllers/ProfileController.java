@@ -43,7 +43,7 @@ public class ProfileController {
     public String showUserProfile(Authentication authentication, Model model) {
         User user = (User) authentication.getPrincipal();
         model.addAttribute("profile", user);
-        return "profile";
+        return "profileEdit";
     }
 
     @PostMapping("/profile/reset/pic")

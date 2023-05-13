@@ -127,10 +127,10 @@ nav a:hover {
         margin-top: 20px;
     }
 }
-.button-container input[id="main"] {
+.button-container input[id="geo"] {
     background: url('../images/image.png') no-repeat;
 }
-.button-container input[id="main"]:hover {
+.button-container input[id="geo"]:hover {
     background: url('../images/images1.png') no-repeat;
 }
 .button-container input[id="trivia"] {
