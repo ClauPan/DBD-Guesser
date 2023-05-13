@@ -4,9 +4,22 @@
 <head th:include="fragments/headers :: head"></head>
 <body>
 <div th:replace="fragments/nav :: top"/>
-<div th:object="${profile}">
-    <span th:text="${profile.username}"/><br>
-    <span th:text="${profile.email}"/><br>
+
+
+<div class="profilePage" th:object="${profile}" style="padding-top: 50px">
+    <div>
+        <img th:src="@{${profile.profilePic}}" style="width: 100px; height: 100px">
+        <form th:action="@{/profile/pic}" method="post">
+            <label for="img">Change profile picture:</label>
+            <input type="file" id="img" name="img" accept="image/*">
+            <input type="submit">
+        </form>
+    </div>
+    <div>
+        <span th:text="${profile.username}"/><br>
+        <span th:text="${profile.email}"/><br>
+    </div>
 </div>
+
 </body>
 </html>

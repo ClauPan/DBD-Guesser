@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:include="fragments/headers :: head"></head>
-<body>
-<h1>Register page</h1>
+<body class="login">
+<div class="login-center">
+  <h1>Register</h1>
+</div>
 <form th:action="@{/auth/register}" method="post">
   <div class="center-container">
     <div class="email">

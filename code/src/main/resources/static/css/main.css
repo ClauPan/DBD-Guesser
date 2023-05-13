@@ -63,6 +63,11 @@ button.profilePic {
     height: 40px;
     padding-right: 10px;
 }
+.profilePage.pic {
+    width: 100px;
+    height: 100px;
+    padding-right: 10px;
+}
 .profileName{
     color: white;
 }
