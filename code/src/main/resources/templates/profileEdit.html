@@ -17,13 +17,6 @@
         <span th:text="${profile.username}"/><br>
     </div>
     <div>
-        <form th:action="@{/profile/reset/username}" method="post">
-            <h3>Reset Username</h3>
-            <input type="text" id="new_name" name="new_name" placeholder="New Username">
-            <input type="submit" value="Reset">
-        </form>
-    </div>
-    <div>
         <form th:action="@{/profile/reset/password}" method="post">
            <h3>Reset Password</h3>
             <input type="password" id="old_pass" name="old_pass" placeholder="Old Password">

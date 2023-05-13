@@ -66,14 +66,6 @@ public class ProfileController {
         return new ResponseEntity<>(Files.readAllBytes(path), headers, HttpStatus.OK);
     }
 
-    @PostMapping("/profile/reset/username")
-    public String changeUsername(Authentication authentication, @RequestParam("new_name") String newName) {
-        User user = (User) authentication.getPrincipal();
-        user.setUsername(newName);
-        userService.save(user);
-        return "redirect:/profile";
-    }
-
     @PostMapping("/profile/reset/password")
     public String changePassword(Authentication authentication, @RequestParam("old_pass") String oldPass, @RequestParam("new_pass") String newPass) {
         PasswordEncoder bcrypt = new BCryptPasswordEncoder();
