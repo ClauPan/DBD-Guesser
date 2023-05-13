@@ -5,28 +5,34 @@
 <body>
 <div th:insert="~{fragments/nav :: top}"></div>
 <div class="container">
-    <div class="title">
-        <div class="title-text">
-            <span th:text="${playlist.name}"></span><br>
+    <div class="items-container">
+        <div class="title">
+            <div class="title-text">
+                <span th:text="${playlist.name}"></span><br>
+            </div>
+            <img th:src="'/images/playlists/'+${playlist.user.id}+'_'+${playlist.id}+'_'+${playlist.name}+'/thumb.png'"><br>
         </div>
-        <img th:src="'/images/playlists/'+${playlist.user.id}+'_'+${playlist.id}+'_'+${playlist.name}+'/thumb.png'"><br>
+        <div class="description">
+            <span id="desc" th:text="${playlist.description}"></span><br>
+            <span id="rating" th:text="${rating}"></span><br>
+        </div>
+        <div class="btn-container">
+            <form action="#" th:action="@{/geo}" method="get">
+                <input type="hidden" id="play" name="pid" th:value="${playlist.id}">
+                <button class="btn-primary"  type="submit">Play</button>
+            </form>
+            <div class="user">
+                <label>Playlist created by</label>
+                <span th:text="${playlist.user.username}"></span><br>
+            </div>
+            <form action="#" th:action="@{/playlists}" method="get">
+                <input class="btn" type="hidden" id="back" name="ptype" th:value="${playlist.type}">
+                <button class="btn-primary" type="submit">Back</button>
+            </form>
+        </div>
     </div>
-    <div class="description">
-        <span id="desc" th:text="${playlist.description}"></span><br>
-        <span id="rating" th:text="${rating}"></span><br>
-    </div>
-    <form action="#" th:action="@{/geo}" method="get">
-        <input type="hidden" id="play" name="pid" th:value="${playlist.id}">
-        <button class="btn btn-primary" type="submit">Play</button>
-    </form>
-    <div class="user">
-        <label>Playlist created by</label>
-        <span th:text="${playlist.user.username}"></span><br>
-    </div>
-    <form action="#" th:action="@{/playlists}" method="get">
-        <input type="hidden" id="back" name="ptype" th:value="${playlist.type}">
-        <button class="btn btn-primary" type="submit">Back</button>
-    </form>
+
+
 </div>
 </body>
 </html>

@@ -192,14 +192,18 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     background-image: url("../images/back.png");
-    margin-top: 80px;
+    margin-top: 60px;
     height: 800px;
+    border-radius: 10px;
+}
+.items-container{
+    margin-top: 20px;
 }
 .title {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-top: -300px;
+    margin-left: 50px;
 }
 .title img {
     margin-left: 500px;
@@ -222,11 +226,14 @@ nav a:hover {
 }
 .description span[id="desc"]{
     text-align: left;
-    font-size: 20px;
-    color: brown;
+    width: auto;
+    height: auto;
+    font-size: 14px;
+    color: white;
     font-weight: bold;
-    margin-right: 300px;
-    margin-top: -140px;
+    margin-right: 150px;
+    margin-top: -250px;
+    margin-left: 50px;
     background-color: #323737;
     padding: 20px;
     border-radius: 20px;
@@ -236,8 +243,14 @@ nav a:hover {
     font-size: 30px;
     color: brown;
     font-weight: bolder;
-    margin-left: 295px;
+    margin-right: 90px;
     margin-top: 10px;
+    margin-bottom: 170px;
+}
+.btn-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .user{
     text-align: center;
@@ -247,9 +260,11 @@ nav a:hover {
     background-color: #323737;
     padding: 20px;
     border-radius: 20px;
+    width: 200px;
+    height: auto;
 
 }
-button.btn-primary {
+.btn-primary {
     background-color: #2B1B1E;
     color: #fff;
     font-size: 18px;
@@ -260,7 +275,7 @@ button.btn-primary {
     margin-bottom: 40px;
     margin-top: 50px;
 }
-button.btn-primary:hover {
+.btn-primary:hover {
     background-color: #56373D;
     color: #fff;
 }
@@ -272,7 +287,7 @@ button.btn-primary:hover {
     .title {
         flex-direction: column;
         align-items: center;
-        margin-top: 100px;
+        margin-top: 150px;
     }
     .title-text{
         margin-bottom: 40px;
