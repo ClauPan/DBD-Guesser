@@ -4,35 +4,35 @@
 <head th:insert="~{fragments/headers :: header}"></head>
 <body>
 <div th:insert="~{fragments/nav :: top}"></div>
-<div class="profile-info" th:object="${profile}">
-    <div>
-        <img th:src="@{'/images/profiles/'+${profile.id}+'_'+${profile.username}+'/profile.png'}">
-        <form th:action="@{/profile/reset/pic}" method="post" enctype="multipart/form-data">
-            <label for="img">Change profile picture:</label>
-            <input type="file" id="img" name="img" accept="image/*">
-            <input type="submit">
-        </form>
-    </div>
-    <div>
-        <span th:text="${profile.username}"/><br>
-    </div>
-    <div>
-        <form th:action="@{/profile/reset/password}" method="post">
-           <h3>Reset Password</h3>
-            <input type="password" id="old_pass" name="old_pass" placeholder="Old Password">
-            <input type="password" id="new_pass" name="new_pass" placeholder="New Password">
-            <input type="submit" value="Reset">
-        </form>
-    </div>
-    <div>
-        <form th:action="@{/profile/reset/email}" method="post">
-            <h3>Reset Email</h3>
-            <input type="text" id="old_email" name="old_email" placeholder="Old Email">
-            <input type="text" id="new_email" name="new_email" placeholder="New Email">
-            <input type="submit" value="Reset">
-        </form>
+<div class="container">
+    <div class="profile-info" th:object="${profile}">
+        <div class="profile-img">
+            <img th:src="@{'/images/profiles/'+${profile.id}+'_'+${profile.username}+'/profile.png'}">
+            <form th:action="@{/profile/reset/pic}" method="post" enctype="multipart/form-data">
+                <div class="file-input-container">
+                    <label class="btn-profile" for="img">Change profile picture</label>
+                    <input type="file" id="img" name="img" accept="image/*">
+                </div>
+                <input class="btn-profile" type="submit">
+            </form>
+        </div>
+        <div class="profile-pass">
+            <form th:action="@{/profile/reset/password}" method="post">
+                <h3>Reset Password</h3>
+                <input type="password" id="old_pass" name="old_pass" placeholder="Old Password">
+                <input type="password" id="new_pass" name="new_pass" placeholder="New Password">
+                <input class="btn-profile" type="submit" value="Reset">
+            </form>
+        </div>
+        <div class="profile-email">
+            <form th:action="@{/profile/reset/email}" method="post">
+                <h3>Reset Email</h3>
+                <input type="text" id="old_email" name="old_email" placeholder="Old Email">
+                <input type="text" id="new_email" name="new_email" placeholder="New Email">
+                <input class="btn-profile" type="submit" value="Reset">
+            </form>
+        </div>
     </div>
 </div>
-
 </body>
 </html>
