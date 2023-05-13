@@ -14,11 +14,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import net.coobird.thumbnailator.Thumbnails;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+
+
 
 @Controller
 public class ProfileController {
@@ -40,17 +46,18 @@ public class ProfileController {
         return "profile";
     }
 
-    @PostMapping("/profile/pic")
+    @PostMapping("/profile/reset/pic")
     public String changeProfilePic(Authentication authentication, @RequestParam("img")MultipartFile file) throws IOException {
         User user = (User) authentication.getPrincipal();
         Path path = Paths.get(PROFILE_PIC_DIR + "\\" + user.getId().toString() + "_" + user.getUsername() + "\\profile.png");
-        Files.write(path, file.getBytes());
+        BufferedImage resizedImage = Thumbnails.of(file.getInputStream()).size(100, 100).asBufferedImage();
+        ImageIO.write(resizedImage, "png", path.toFile());
         return "redirect:/profile";
     }
 
     @GetMapping("/images/profiles/{id}_{username}/profile.png")
     public ResponseEntity<byte[]> getProfilePic(@PathVariable Long id, @PathVariable String username) throws IOException {
-        Path path = Paths.get(PROFILE_PIC_DIR + "\\" + id.toString() + "_" + username + "\\profile.png");
+        Path path = Paths.get(PROFILE_PIC_DIR + "\\" + id + "_" + username + "\\profile.png");
         HttpHeaders headers = new HttpHeaders();
         headers.setCacheControl(CacheControl.noCache().getHeaderValue());
         return new ResponseEntity<>(Files.readAllBytes(path), headers, HttpStatus.OK);

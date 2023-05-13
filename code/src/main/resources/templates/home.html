@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head th:include="fragments/headers :: head"></head>
+<head th:insert="~{fragments/headers :: header}"></head>
 <body>
-<div th:replace="fragments/nav :: top"></div>
+<div th:insert="~{fragments/nav :: top}"></div>
 <div class="button-wrapper">
     <div class="button-container">
         <form action="#" th:action="@{/playlists}" method="get">

@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head th:include="fragments/headers :: head"></head>
+<head th:insert="~{fragments/headers :: header}"></head>
 <body>
-<div th:replace="fragments/nav :: top"/>
-
-
+<div th:insert="~{fragments/nav :: top}"></div>
 <div class="profile-info" th:object="${profile}">
     <div>
-        <img th:src="@{'/images/profiles/'+${profile.id}+'_'+${profile.username}+'/profile.png'}" style="width: 100px; height: 100px">
-        <form th:action="@{/profile/pic}" method="post" enctype="multipart/form-data">
+        <img th:src="@{'/images/profiles/'+${profile.id}+'_'+${profile.username}+'/profile.png'}">
+        <form th:action="@{/profile/reset/pic}" method="post" enctype="multipart/form-data">
             <label for="img">Change profile picture:</label>
             <input type="file" id="img" name="img" accept="image/*">
             <input type="submit">
@@ -17,7 +15,30 @@
     </div>
     <div>
         <span th:text="${profile.username}"/><br>
-        <span th:text="${profile.email}"/><br>
+    </div>
+    <div>
+        <form th:action="@{/profile/reset/username}">
+            <h3>Reset Username</h3>
+            <input type="text" id="old_username" name="old_username" placeholder="Old Username">
+            <input type="text" id="new_username" name="new_username" placeholder="New Username">
+            <input type="submit" value="Reset">
+        </form>
+    </div>
+    <div>
+        <form th:action="@{/profile/reset/password}">
+           <h3>Reset Password</h3>
+            <input type="password" id="old_pass" name="old_pass" placeholder="Old Password">
+            <input type="password" id="new_pass" name="new_pass" placeholder="New Password">
+            <input type="submit" value="Reset">
+        </form>
+    </div>
+    <div>
+        <form th:action="@{/profile/reset/email}">
+            <h3>Reset Email</h3>
+            <input type="text" id="old_email" name="old_email" placeholder="Old Email">
+            <input type="text" id="new_email" name="new_email" placeholder="New Email">
+            <input type="submit" value="Reset">
+        </form>
     </div>
 </div>
 
