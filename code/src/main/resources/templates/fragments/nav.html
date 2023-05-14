@@ -7,7 +7,7 @@
           <a href="/"><img th:src="@{/images/logo.png}" alt="logo"/></a>
         </span>
     </div>
-    <nav>
+    <nav id="main-nav" th:class="${#authentication.principal != null and #authorization.expression('hasRole(''ROLE_CREATOR'')')} ? 'creator' : ''">
         <div sec:authorize="!isAuthenticated()">
             <a href="/auth/login">Log In</a>
             <a href="/auth/register">Sign Up</a>
@@ -28,5 +28,14 @@
             <a href="/auth/logout" class="logout-button">Logout</a>
         </div>
     </nav>
+    <script th:inline="javascript">
+        var isAuthenticated = [[${#authentication.principal != null}]];
+        var isCreator = [[${#authorization.expression('hasRole(''ROLE_CREATOR'')')}]];
+
+        if (isAuthenticated && isCreator) {
+            var navElement = document.getElementById('main-nav');
+            navElement.style.padding = '20px 50px 20px calc(100vw - 925px)';
+        }
+    </script>
 </div>
 </html>

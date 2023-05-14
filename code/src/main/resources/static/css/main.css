@@ -41,7 +41,7 @@ nav {
     align-items: center;
     position: absolute;
     right: 150px;
-    padding: 20px 50px 20px calc(100vw - 925px);
+    padding: 20px 50px 20px calc(100vw - 750px);
     border-radius: 20px;
     background: linear-gradient(to right, rgba(40, 43, 43, 0.1), rgba(40, 43, 43, 1));
 }
