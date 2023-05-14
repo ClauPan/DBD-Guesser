@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{fragments/headers :: header}"></head>
+<body>
+<div th:insert="~{fragments/nav :: top}"></div>
+<div>
+    <form id="add-image" th:action="@{/playlist/create/add}" method="post" enctype="multipart/form-data" style="padding-top: 100px">
+        <div class="file-input-container">
+            <label class="btn-profile" for="img">Choose Image</label>
+            <input type="file" id="img" name="img" accept="image/*">
+        </div>
+        <select form="add-image" name="choice_1" required>
+            <option th:each="option : ${GAME_PHASE_1}" th:value="${option}" th:text="${option}"></option>
+        </select>
+        <select form="add-image" name="choice_2" required>
+            <option th:each="option : ${GAME_PHASE_2}" th:value="${option}" th:text="${option}"></option>
+        </select>
+        <select form="add-image" name="choice_3" required>
+            <option th:each="option : ${GAME_PHASE_3}" th:value="${option}" th:text="${option}"></option>
+        </select>
+        <input class="btn-profile" type="submit">
+    </form>
+</div>
+</body>
+</html>

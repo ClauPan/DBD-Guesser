@@ -13,6 +13,12 @@
             <a href="/auth/register">Sign Up</a>
         </div>
         <div sec:authorize="isAuthenticated()" class="logged">
+            <div class="create-playlist" sec:authorize="hasRole('ROLE_CREATOR')">
+                <form action="#" th:action="@{/playlist/create}" method="get">
+                    <input class="btn" type="hidden" id="create" value="">
+                    <button class="btn-primary" type="submit">Create Playlist</button>
+                </form>
+            </div>
             <div class="profile">
                 <form th:action="@{/profile/_}" method="GET">
                     <input type="image" th:src="@{'/images/profiles/'+${#authentication.principal['id']}+'_'+${#authentication.principal['username']}+'/profile.png'}" th:alt="Profile"/>

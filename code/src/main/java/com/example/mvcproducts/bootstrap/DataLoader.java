@@ -27,8 +27,12 @@ public class DataLoader implements CommandLineRunner {
     user1.getRoles().add(Role.ROLE_USER);
     User user2=new User("user2",bcrypt.encode("user2"), "user2@gmail.com");
     user2.getRoles().add(Role.ROLE_ADMIN);
+    User user3=new User("user3",bcrypt.encode("user3"), "user3@gmail.com");
+    user3.getRoles().add(Role.ROLE_ADMIN);
+    user3.getRoles().add(Role.ROLE_CREATOR);
     userService.save(user1);
     userService.save(user2);
+    userService.save(user3);
 
     Playlist playlist1 = new Playlist("playlist1", "geo", "desc1 dlhnwqadkjwqnhdkjadnsjkdnxaksjdnaskjdnszmx  dwkb xasujed qwsd askue dx wsduj dxwehndwkjd lasn  enwqkdnhka/n. wdjwjkdasgbawikkjwebgd./n duwqadukjbdsaikudhwqa", user2);
     Playlist playlist2 = new Playlist("playlist2", "trivia", "desc2", user2);

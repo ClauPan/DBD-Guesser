@@ -1,9 +1,7 @@
 package com.example.mvcproducts.services;
 
-import com.example.mvcproducts.domain.Image;
 import com.example.mvcproducts.domain.Playlist;
 import com.example.mvcproducts.domain.Rating;
-import com.example.mvcproducts.repositories.ImageRepository;
 import com.example.mvcproducts.repositories.PlaylistRepository;
 import com.example.mvcproducts.repositories.RatingRepository;
 import org.springframework.stereotype.Service;
@@ -14,12 +12,10 @@ import java.util.List;
 public class PlaylistServiceImpl implements PlaylistService{
     private final PlaylistRepository playlistRepository;
     private final RatingRepository ratingRepository;
-    private final ImageRepository imageRepository;
 
-    public PlaylistServiceImpl(PlaylistRepository playlistRepository, RatingRepository ratingRepository, ImageRepository imageRepository) {
+    public PlaylistServiceImpl(PlaylistRepository playlistRepository, RatingRepository ratingRepository) {
         this.playlistRepository = playlistRepository;
         this.ratingRepository = ratingRepository;
-        this.imageRepository = imageRepository;
     }
 
     public void save(Playlist playlist) {
@@ -36,10 +32,6 @@ public class PlaylistServiceImpl implements PlaylistService{
     @Override
     public List<Rating> getRatingsByPlaylistId(Long playlistId) {
         return ratingRepository.getRatingsByPlaylistId(playlistId);
-    }
-    @Override
-    public List<Image> getImagesByPlaylistId(Long playlistId) {
-        return imageRepository.getImagesByPlaylistId(playlistId);
     }
     @Override
     public double getOverallRating(Long playlistId) {

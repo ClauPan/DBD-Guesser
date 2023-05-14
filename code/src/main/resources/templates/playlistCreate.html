@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{fragments/headers :: header}"></head>
+<body>
+<div th:insert="~{fragments/nav :: top}"></div>
+<div>
+    <div th:each="image : ${playlist.getImages()}" style="padding-top: 100px">
+        <img th:src="@{'/images/playlists/temp/' + ${#authentication.principal['id']}+'_'+${#authentication.principal['username']} + '/' + ${image.filename}}"
+             style="width: 200px; height: 200px"> <br>
+        <form action="#" th:action="@{/playlist/create/edit}" method="get">
+            <input class="btn" type="hidden" name="index" th:value="${image.index}">
+            <button class="btn-primary" type="submit">Edit</button>
+        </form>
+        <form action="#" th:action="@{/playlist/create/delete}" method="get">
+            <input class="btn" type="hidden" name="index" th:value="${image.index}">
+            <button class="btn-primary" type="submit">Edit</button>
+        </form>
+    </div>
+    <div>
+        <form action="#" th:action="@{/playlist/create/add}" method="get">
+            <input class="btn" type="hidden" id="create" value="">
+            <button class="btn-primary" type="submit">Add Image</button>
+        </form>
+    </div>
+    <div>
+        <form action="#" th:action="@{/playlist/create/finish}" method="get">
+            <input class="btn" type="hidden" id="finish" value="">
+            <button class="btn-primary" type="submit">Create Playlist</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

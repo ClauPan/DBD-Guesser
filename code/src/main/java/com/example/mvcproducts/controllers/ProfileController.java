@@ -53,6 +53,9 @@ public class ProfileController {
     public String changeProfilePic(Authentication authentication, @RequestParam("img")MultipartFile file) throws IOException {
         User user = (User) authentication.getPrincipal();
         Path path = Paths.get(PROFILE_PIC_DIR + "\\" + user.getId().toString() + "_" + user.getUsername() + "\\profile.png");
+        if (!Files.exists(path)) {
+            Files.createDirectories(path);
+        }
         BufferedImage resizedImage = Thumbnails.of(file.getInputStream()).size(100, 100).asBufferedImage();
         ImageIO.write(resizedImage, "png", path.toFile());
         return "redirect:/profile";
