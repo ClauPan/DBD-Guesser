@@ -16,7 +16,7 @@
             <div class="create-playlist" sec:authorize="hasRole('ROLE_CREATOR')">
                 <form action="#" th:action="@{/playlist/create}" method="get">
                     <input class="btn" type="hidden" id="create" value="">
-                    <button class="btn-primary" type="submit">Create Playlist</button>
+                    <button class="btn-create" type="submit">Create Playlist</button>
                 </form>
             </div>
             <div class="profile">

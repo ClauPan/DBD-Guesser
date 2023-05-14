@@ -41,7 +41,7 @@ nav {
     align-items: center;
     position: absolute;
     right: 150px;
-    padding: 20px 50px 20px calc(100vw - 800px);
+    padding: 20px 50px 20px calc(100vw - 925px);
     border-radius: 20px;
     background: linear-gradient(to right, rgba(40, 43, 43, 0.1), rgba(40, 43, 43, 1));
 }
@@ -81,9 +81,24 @@ nav a {
     text-decoration: none;
     border-radius: 4px;
     margin-right: 40px;
+    cursor: pointer;
 }
 nav a:hover {
     background-color: #56373D;
+    cursor: pointer;
+}
+.btn-create{
+    padding: 14px 20px;
+    background-color: #2B1B1E;
+    color: #fff;
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 40px;
+}
+.btn-create:hover{
+    background-color: #56373D;
+    cursor: pointer;
 }
 .error-element {
     color:red;
@@ -134,12 +149,14 @@ nav a:hover {
 }
 .button-container input[id="geo"]:hover {
     background: url('../images/images1.png') no-repeat;
+    cursor: pointer;
 }
 .button-container input[id="trivia"] {
     background: url('../images/image.png') no-repeat;
 }
 .button-container input[id="trivia"]:hover {
     background: url('../images/images1.png') no-repeat;
+    cursor: pointer;
 }
 .button-wrapper-p {
     display: grid;
@@ -166,6 +183,7 @@ nav a:hover {
 }
 .playlist:hover {
     opacity: 0.5;
+    cursor: pointer;
 }
 .button-container-p span{
     background-color: #282b2b;
@@ -290,6 +308,7 @@ nav a:hover {
 .btn-primary:hover {
     background-color: #56373D;
     color: #fff;
+    cursor: pointer;
 }
 @media only screen and (max-width: 768px) {
     .container {
