@@ -11,33 +11,31 @@
 </head>
 <body>
 <div th:insert="~{fragments/nav :: top}"></div>
-<div>
-    <div style="display: flex">
-        <button class="btn-primary" id="prevPage"><</button>
-        <div id="images" style="padding-top: 100px; display: flex;">
-
+<div class="container">
+    <div class="move-wrap">
+        <button class="btn-move" id="prevPage"><</button>
+        <div class="img-container" id="images">
         </div>
-        <button class="btn-primary" id="nextPage">></button>
+        <button class="btn-move" id="nextPage">></button>
     </div>
-    <div>
+    <div class="add-container">
         <form action="#" th:action="@{/playlist/create/add}" method="get">
             <input class="btn" type="hidden" id="create" value="">
-            <button class="btn-primary" type="submit">Add Image</button>
+            <button class="btn-add" type="submit">Add Image</button>
         </form>
     </div>
-    <div>
+    <div class="info-container">
         <form id="create-playlist" action="#" th:action="@{/playlist/create/finish}" method="post">
             <input type="text" id="name" name="name" placeholder="Playlist Name" required>
-            <input type="text" id="desc" name="desc" placeholder="Playlist Description" required>
+            <textarea form="create-playlist" id="desc" name="desc" placeholder="Playlist Description" required></textarea>
             <select form="create-playlist" name="type" required>
                 <option th:value="geo" th:text="geo"></option>
                 <option th:value="trivia" th:text="trivia"></option>
             </select>
             <input class="btn" type="hidden" id="finish" value="">
-            <button class="btn-primary" type="submit">Create Playlist</button>
+            <button class="btn-submit" type="submit">Create Playlist</button>
         </form>
     </div>
-
 </div>
 </body>
 <script th:inline="javascript">

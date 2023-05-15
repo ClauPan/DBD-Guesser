@@ -24,7 +24,7 @@ body {
 .header img {
     margin-right: 20px;
     alignment: left;
-    width: 170px;
+    width: 150px;
 }
 .header-text {
     display: flex;
@@ -480,4 +480,98 @@ input[type="password"] {
     .profile-email{
         width: 50%;
     }
+}
+.move-wrap{
+    display: flex;
+}
+.img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-move{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: darkred;
+    color: #fff;
+    width: 10px;
+    height: 40px;
+    font-size: 18px;
+    padding: 20px 20px 20px 20px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 50px;
+}
+.btn-move:hover{
+    background-color: #56373D;
+    color: #fff;
+    cursor: pointer;
+}
+.img-container{
+    padding: 50px;
+}
+.img-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-edit-wrap{
+    display: flex;
+}
+.info-container form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.info-container input{
+    margin-bottom: 10px;
+    width: 20vw;
+}
+textarea {
+    width: 20vw;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    border-radius: 4px;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+.info-container select {
+    width: 10vw;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+.btn-add{
+    background-color: darkred;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.btn-add:hover{
+    background-color: #56373D;
+    color: #fff;
+    cursor: pointer;
+}
+.btn-submit{
+    background-color: darkred;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.btn-submit:hover{
+    background-color: #56373D;
+    color: #fff;
+    cursor: pointer;
 }

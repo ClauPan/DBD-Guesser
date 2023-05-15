@@ -4,7 +4,7 @@ const prevPageButton = document.getElementById("prevPage");
 const nextPageButton = document.getElementById("nextPage");
 
 let displayPage = 0;
-let displayLimit = 5;
+let displayLimit = 3;
 let displayLength = getMax();
 let basePath = "/images/playlists/temp/" + id + "_" + username + "/";
 
@@ -14,7 +14,7 @@ function drawImages() {
     imgDiv.innerHTML = "";
     for(let i = displayPage; i < displayLength; i++) {
         let mainDiv = document.createElement("div");
-        mainDiv.style.paddingTop = "100px";
+        mainDiv.setAttribute("class", "img-wrap");
 
         let img = document.createElement("img");
         img.src = basePath + images[i];
@@ -22,7 +22,7 @@ function drawImages() {
         img.style.height = "200px";
 
         let div = document.createElement("div");
-        div.style.display = "flex";
+        div.setAttribute("class", "btn-edit-wrap")
 
         let formEdit = document.createElement("form");
         formEdit.method = "get";
