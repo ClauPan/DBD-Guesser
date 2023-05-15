@@ -12,6 +12,10 @@ public class PlaylistData {
     private String name;
     private String type;
     private String description;
-    private User user;
-    private List<EntryData> images = new ArrayList<>();
+    private User user = null;
+    private List<String> images = new ArrayList<>();
+
+    public void addImage(String image) {
+        this.images.add(image);
+    }
 }

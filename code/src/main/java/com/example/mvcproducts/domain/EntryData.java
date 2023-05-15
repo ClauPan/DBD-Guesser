@@ -10,9 +10,7 @@ import java.util.HashMap;
 @NoArgsConstructor
 public class EntryData {
     private String filename;
-    private int index;
-    public EntryData(String filename, int index) {
+    public EntryData(String filename) {
         this.filename = filename;
-        this.index = index;
     }
 }

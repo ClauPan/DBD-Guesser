@@ -44,6 +44,7 @@ public class ProfileController {
 
     @GetMapping("/profile")
     public String showUserProfile(Authentication authentication, Model model) {
+        PlaylistController.DELETE_TEMP = true;
         User user = (User) authentication.getPrincipal();
         model.addAttribute("profile", user);
         return "profileEdit";

@@ -29,11 +29,11 @@
         </div>
     </nav>
     <script th:inline="javascript">
-        var isAuthenticated = [[${#authentication.principal != null}]];
-        var isCreator = [[${#authorization.expression('hasRole(''ROLE_CREATOR'')')}]];
+        let isAuthenticated = [[${#authentication.principal != null}]];
+        let isCreator = [[${#authorization.expression('hasRole(''ROLE_CREATOR'')')}]];
 
         if (isAuthenticated && isCreator) {
-            var navElement = document.getElementById('main-nav');
+            const navElement = document.getElementById('main-nav');
             navElement.style.padding = '20px 50px 20px calc(100vw - 925px)';
         }
     </script>
