@@ -7,6 +7,9 @@ body {
     background-image: url("../images/dbd1.png");
     background-position:50% 0%;
     background-repeat: space;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .header-container {
     display: flex;
@@ -212,12 +215,15 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     background-image: url("../images/back.png");
-    margin-top: 60px;
-    height: 800px;
+    margin-top: 75px;
+    width: 50vw;
+    height: auto;
     border-radius: 10px;
+    padding-bottom: 50px;
 }
 .items-container{
     margin-top: 20px;
+    padding-top: 30px;
 }
 .title {
     display: flex;
@@ -311,10 +317,6 @@ nav a:hover {
     cursor: pointer;
 }
 @media only screen and (max-width: 768px) {
-    .container {
-        height: auto;
-        width: auto;
-    }
     .title {
         flex-direction: column;
         align-items: center;
@@ -418,7 +420,8 @@ input[type="password"] {
     color: white;
 }
 .profile-info{
-    margin-top: -100px;
+    margin-top: -20px;
+    padding-top: 100px;
     color: white;
 }
 .profile-img{
@@ -528,13 +531,13 @@ input[type="password"] {
     margin-bottom: 10px;
     width: 20vw;
 }
-textarea {
+.info-container textarea {
     width: 20vw;
     padding: 10px;
     font-family: Arial, sans-serif;
     font-size: 13px;
     border-radius: 4px;
-    resize: vertical;
+    height: 50px;
     margin-bottom: 10px;
 }
 .info-container select {

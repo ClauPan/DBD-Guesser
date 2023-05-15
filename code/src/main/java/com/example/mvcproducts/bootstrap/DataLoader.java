@@ -34,7 +34,7 @@ public class DataLoader implements CommandLineRunner {
     userService.save(user2);
     userService.save(user3);
 
-    Playlist playlist1 = new Playlist("playlist1", "geo", "desc1 dlhnwqadkjwqnhdkjadnsjkdnxaksjdnaskjdnszmx  dwkb xasujed qwsd askue dx wsduj dxwehndwkjd lasn  enwqkdnhka/n. wdjwjkdasgbawikkjwebgd./n duwqadukjbdsaikudhwqa", user2);
+    Playlist playlist1 = new Playlist("playlist1", "geo", "desc1 dlhnwqadkjwqnhdkjadnsjkdnxaksjdnaskjdnszmx  dwkb xasujed qwsd askue dx wsduj dxwehndwkjd lasn  enwqkdnhka/n. wdjwjkdasgbawikkjwebgd. SS", user2);
     Playlist playlist2 = new Playlist("playlist2", "trivia", "desc2", user2);
     Playlist playlist3 = new Playlist("playlist3", "geo", "desc3", user1);
     Playlist playlist4 = new Playlist("playlist4", "geo", "desc4", user1);
