@@ -1,5 +1,6 @@
 package com.example.mvcproducts.controllers;
 
+import com.example.mvcproducts.domain.Playlist;
 import com.example.mvcproducts.domain.PlaylistData;
 import com.example.mvcproducts.domain.User;
 import com.example.mvcproducts.services.PlaylistService;
@@ -52,7 +53,7 @@ public class PlaylistController {
     @GetMapping("/playlists/entry")
     public String showPlaylist(Model model, @RequestParam Long pid) {
         DELETE_TEMP = true;
-        model.addAttribute("playlist", playlistService.getPlaylistById(pid));
+        model.addAttribute("playlistEntry", playlistService.getPlaylistById(pid));
         model.addAttribute("rating", playlistService.getOverallRating(pid));
         return "playlist/entry";
     }
@@ -132,10 +133,43 @@ public class PlaylistController {
     }
 
     @PostMapping("/playlist/create/delete")
-    public String createPlaylist_editImage_save(@RequestParam("index") String index, @ModelAttribute("playlist") PlaylistData playlistData) throws IOException {
+    public String createPlaylist_deleteImage(@RequestParam("index") String index, @ModelAttribute("playlist") PlaylistData playlistData) throws IOException {
         String filename = playlistData.getImages().remove(Integer.parseInt(index));
         Files.delete(Paths.get(TEMP_DIR.toString() + "\\" + filename));
         return "redirect:/playlist/create";
+    }
+
+    @PostMapping("/playlist/create/finish")
+    public String createPlaylist_save(@RequestParam("name") String name, @RequestParam("desc") String desc,
+                                      @RequestParam("type") String type, @ModelAttribute("playlist") PlaylistData playlistData) throws IOException {
+
+        playlistData.setName(name);
+        playlistData.setDescription(desc);
+        playlistData.setType(type);
+
+        Playlist playlist = new Playlist(playlistData);
+        playlistService.save(playlist);
+
+        Path playlistPath = Paths.get(PLAYLIST_DIR + "\\" + playlist.getUser().getId() + "_" + playlist.getId() + "_" + playlist.getName());
+        if (!Files.exists(playlistPath)) {
+            Files.createDirectories(playlistPath);
+        }
+
+        File[] images = TEMP_DIR.toFile().listFiles();
+        if (images != null) {
+            boolean once = true;
+            for (File image : images) {
+                String filename = image.getName();
+                if (once) {
+                    Files.copy(Paths.get(image.getAbsolutePath()), Paths.get(playlistPath + "\\" + "thumb.png"), StandardCopyOption.REPLACE_EXISTING);
+                    once = false;
+                }
+                Files.move(Paths.get(image.getAbsolutePath()), Paths.get(playlistPath + "\\" + filename), StandardCopyOption.REPLACE_EXISTING);
+            }
+        }
+
+
+        return "redirect:/";
     }
 
 }

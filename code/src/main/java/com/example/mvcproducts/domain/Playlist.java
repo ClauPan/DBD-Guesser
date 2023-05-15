@@ -27,4 +27,11 @@ public class Playlist {
         this.description = desc;
         this.user = user;
     }
+
+    public Playlist(PlaylistData playlistData) {
+        this.name = playlistData.getName();
+        this.description = playlistData.getDescription();
+        this.type = playlistData.getType();
+        this.user = playlistData.getUser();
+    }
 }
