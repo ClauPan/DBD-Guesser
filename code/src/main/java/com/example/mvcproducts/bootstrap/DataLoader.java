@@ -39,11 +39,13 @@ public class DataLoader implements CommandLineRunner {
     Playlist playlist3 = new Playlist("playlist3", "geo", "desc3", user1);
     Playlist playlist4 = new Playlist("playlist4", "geo", "desc4", user1);
     Playlist playlist5 = new Playlist("playlist5", "geo", "desc5", user1);
+    Playlist playlist6 = new Playlist("test", "geo", "testdesc", user3);
 
     playlistService.save(playlist1);
     playlistService.save(playlist2);
     playlistService.save(playlist3);
     playlistService.save(playlist4);
     playlistService.save(playlist5);
+    playlistService.save(playlist6);
   }
 }

@@ -6,21 +6,25 @@
 <div th:insert="~{fragments/nav :: top}"></div>
 <div class="container">
     <div class="items-container">
-        <div class="title">
-            <div class="title-text">
-                <span th:text="${playlistEntry.name}"></span><br>
+        <div class="col">
+            <div class="col1">
+                <div class="title-text">
+                    <span th:text="${playlistEntry.name}"></span>
+                </div>
+                <div class="description">
+                    <span id="desc" th:text="${playlistEntry.description}"></span>
+                </div>
             </div>
-            <img th:src="'/images/playlists/'+${playlistEntry.user.id}+'_'+${playlistEntry.id}+'_'+${playlistEntry.name}+'/thumb.png'"><br>
-        </div>
-        <div class="description">
-            <span id="desc" th:text="${playlistEntry.description}"></span><br>
-            <span id="rating" th:text="${rating}"></span><br>
-        </div>
-        <div class="btn-rate">
-            <form action="#" th:action="@{/geo}" method="get">
-                <input type="hidden" id="rate" name="pid" th:value="${playlistEntry.id}">
-                <button class="btn-primary"  type="submit">Rate Playlist</button>
-            </form>
+            <div class="col2">
+                <img th:src="'/images/playlists/'+${playlistEntry.user.id}+'_'+${playlistEntry.id}+'_'+${playlistEntry.name}+'/thumb.png'">
+                <span id="rating" th:text="${rating}"></span>
+                <div class="btn-rate">
+                    <form action="#" th:action="@{/geo}" method="get">
+                        <input type="hidden" id="rate" name="pid" th:value="${playlistEntry.id}">
+                        <button class="btn-primary"  type="submit">Rate Playlist</button>
+                    </form>
+                </div>
+            </div>
         </div>
         <div class="btn-container">
             <div class="btn-edit">
