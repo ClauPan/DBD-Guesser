@@ -26,6 +26,8 @@ public class User implements UserDetails {
   private String password;
   private String email;
 
+  private double score;
+
   @ElementCollection(fetch = FetchType.EAGER)
   private List<Role> roles=new ArrayList<>();
 
@@ -33,6 +35,7 @@ public class User implements UserDetails {
     this.username = username;
     this.password = password;
     this.email = email;
+    this.score = 0;
   }
 
   @Override

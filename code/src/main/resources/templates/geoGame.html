@@ -12,12 +12,26 @@
 <body>
 <div th:insert="~{fragments/nav :: top}"></div>
 
-<div id="gameWindow">
-
+<div>
+    <img id="guessImage" src="" style="width: 500px; height: 500px;">
+    <div>
+        <select id="guessChoice_1" name="choice_1">
+            <option th:each="option : ${choice_1}" th:value="${option}" th:text="${option}"></option>
+        </select>
+        <select id="guessChoice_2" name="choice_2">
+            <option value="none">Can't tell</option>
+            <option th:each="option : ${choice_2}" th:value="${option}" th:text="${option}"></option>
+        </select>
+        <select id="guessChoice_3" name="choice_3">
+            <option th:each="option : ${choice_3}" th:value="${option}" th:text="${option}"></option>
+        </select>
+        <button class="btn-move" id="guessButton">Guess</button>
+    </div>
 </div>
 
 </body>
 <script th:inline="javascript">
+    let path = [[${path}]];
     let images = [[${images}]];
 </script>
 </html>
