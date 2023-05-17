@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head th:insert="~{fragments/headers :: header}"></head>
+<head th:insert="~{fragments/headers :: header}">
+    <script th:src="@{/js/triviaGame.js}" defer></script>
+</head>
 <body>
 <div th:insert="~{fragments/nav :: top}"></div>
 
@@ -10,7 +12,7 @@
         <div class="button-container-p">
             <form action="#" th:action="@{/playlists/entry}" method="get">
                 <input type="hidden" name="pid" th:value="${playlist.id}">
-                <input class="playlist" type="submit" value="" th:style="'background: url(\''+'/images/playlists/'+${playlist.user.id}+'_'+${playlist.id}+'_'+${playlist.name}+'/thumb.png'+'\') no-repeat;'">
+                <input class="playlist" type="submit" id="playlist" value="" th:style="'background: url(\''+'/images/playlists/'+${playlist.user.id}+'_'+${playlist.id}+'_'+${playlist.name}+'/thumb.png'+'\') no-repeat;'">
             </form>
             <span th:text="${playlist.name}">name</span>
         </div>
@@ -18,4 +20,11 @@
 </div>
 </div>
 </body>
+<script th:inline="javascript">
+    let name = "";
+    const playlistButton = document.getElementById("playlist");
+    playlistButton.onclick = () => {
+        name = [[${playlist.name}]];
+    }
+</script>
 </html>

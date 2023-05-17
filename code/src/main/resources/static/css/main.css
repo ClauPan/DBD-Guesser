@@ -119,10 +119,6 @@ nav a:hover {
         padding: 20px 30px;
     }
 }
-.error-element {
-    color:red;
-    font-weight:bold;
-}
 .button {
     width: 400px;
     height: 400px;
