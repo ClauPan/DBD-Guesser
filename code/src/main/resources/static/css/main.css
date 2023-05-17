@@ -661,6 +661,11 @@ input[type="password"] {
     border: none;
     margin-top: 50px;
 }
+.btn-guess:hover{
+    background-color: #56373D;
+    color: #fff;
+    cursor: pointer;
+}
 @media only screen and (max-width: 900px) {
     .choice-window{
         align-items: center;
@@ -671,3 +676,136 @@ input[type="password"] {
     }
 }
 
+.button-wrapper-trivia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 200px;
+
+}
+.button-container-trivia {
+    display: inline-block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #A88389;
+    margin: 50px;
+}
+.button-container-trivia span{
+    background-color: #282b2b;
+    padding: 5px;
+    border-radius: 2px;
+    font-size: 20px;
+}
+@media only screen and (max-width: 900px) {
+    .button-wrapper-trivia{
+        flex-direction: column;
+    }
+}
+
+.quiz-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.quiz-wrapper h2{
+    color: white;
+}
+.quiz-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.quiz-container h3{
+    color: white;
+    font-size: 26px;
+}
+.question-text{
+    align-items: center;
+}
+.question-text h3{
+    color: white;
+    font-size: 22px;
+}
+.round{
+    color: white;
+    font-size: 18px;
+}
+.radio {
+    display: none;
+}
+.radio + span {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+}
+.radio + span:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: white; /* Change this to the desired color for the radio button */
+}
+.radio:checked + span:before {
+    background-color: darkred; /* Checked background color of the radio button */
+}
+
+.profile-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile{
+    display: flex;
+    align-items: center;
+
+}
+.profile-edit{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 20px;
+}
+.score{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #323737;
+    width: auto;
+    height: auto;
+    padding: 30px;
+    border-radius: 5px;
+    margin-right: 33px;
+}
+.profile-edit span{
+    font-size: 28px;
+    font-weight: bold;
+    background-color: #323737;
+    padding: 19px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.btn-edit{
+    background-color: darkred;
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+}
+.btn-edit:hover{
+    background-color: #56373D;
+    color: #fff;
+    cursor: pointer;
+}
+.score span{
+    font-size: 26px;
+    color: white;
+    font-weight: bold;
+}

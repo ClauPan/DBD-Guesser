@@ -107,45 +107,77 @@ function choose(){
 }
 
 function renderQuestion(){
-    test = get("test");
+    test = get("quiz-container");
+    test.innerHTML="";
     if(pos >= randomQuestions.length){
-        test.innerHTML = "<h3> Congratulations </h3>";
-        test.innerHTML = "<h4> You scored </h4>";
-        test.innerHTML = "<h3>"+score+" points</h3>";
+        get("quiz_status").innerHTML="<h3> Congratulations! </h3>";
+        test.innerHTML = "<h3>You scored "+score+" questions right!</h3>";
+        let button = document.createElement("button");
+        button.setAttribute("class", "btn-guess");
+        button.innerHTML = "Finish"
+        button.onclick = () => {
+            location.href = "/";
+        }
+        test.appendChild(button)
     } else{
-        get("test_status").innerHTML = "Question "+(pos+1)+" of "+randomQuestions.length;
+        get("quiz_status").innerHTML = "Question "+(pos+1)+" of "+randomQuestions.length;
 
         question = randomQuestions[pos].question;
         chA = randomQuestions[pos].a;
         chB = randomQuestions[pos].b;
         chC= randomQuestions[pos].c;
 
-        test.innerHTML = "<h3>"+question+"</h3>";
+        let questionDiv= document.createElement("div");
+        questionDiv.setAttribute("class", "question-text");
+        questionDiv.innerHTML = "<h3>"+question+"</h3>";
 
-        let label1 = document.createElement("label")
+        test.appendChild(questionDiv);
+
+        let firstDiv=document.createElement("div");
+        firstDiv.setAttribute("class", "questions-container");
+
+        let label1 = document.createElement("label");
         label1.setAttribute("class", "round");
-        label1.innerHTML= chA;
-        let input1 =document.createElement("input")
-        input1.type="radio";
-        input1.name="choices";
-        input1.value= randomQuestions[pos].c;
+
+        let input1 = document.createElement("input");
+        input1.setAttribute("class", "radio");
+        input1.type = "radio";
+        input1.name = "choices";
+        input1.value = randomQuestions[pos].a;
+
+        let span1 = document.createElement("span");
+        span1.setAttribute("class", "checkmark");
 
         label1.appendChild(input1);
-        test.appendChild(label1);
+        label1.appendChild(span1);
+        label1.innerHTML += chA;
 
-        let label2 = document.createElement("label")
-        label2.setAttribute("class", "round");
-        label2.innerHTML=chB;
-        let input2 =document.createElement("input")
-        input2.type="radio";
-        input2.name="choices";
-        input2.value= randomQuestions[pos].c;
+        firstDiv.appendChild(label1);
+
+        let label2 = document.createElement("label");
+        label1.setAttribute("class", "round");
+
+        let input2 = document.createElement("input");
+        input2.setAttribute("class", "radio");
+        input2.type = "radio";
+        input2.name = "choices";
+        input2.value = randomQuestions[pos].b;
+
+        let span2 = document.createElement("span");
+        span1.setAttribute("class", "checkmark");
 
         label2.appendChild(input2);
-        test.appendChild(label2);
+        label2.appendChild(span2);
+        label2.innerHTML += chB;
+
+        firstDiv.appendChild(label2);
+
+        let secondDiv = document.createElement("div");
+        secondDiv.setAttribute("class", "btn-quiz");
 
         let inputBtn = document.createElement("input");
         inputBtn.setAttribute("id", "submit")
+        inputBtn.setAttribute("class", "btn-guess");
         inputBtn.type="submit";
         inputBtn.value="Submit";
         inputBtn.onclick = () => {
@@ -161,6 +193,9 @@ function renderQuestion(){
             pos++;
             renderQuestion();
         }
-        test.appendChild(inputBtn);
+        secondDiv.appendChild(inputBtn);
+
+        test.appendChild(firstDiv);
+        test.appendChild(secondDiv);
     }
 }
