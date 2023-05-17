@@ -599,3 +599,75 @@ input[type="password"] {
     font-weight: normal;
     font-family: Arial, sans-serif;
 }
+
+.container-second{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.guessCounter{
+    color: white;
+}
+.guessWindow {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+.guessWindow h3{
+    color: white;
+}
+.finish{
+    flex-basis: 100%;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+
+}
+.img-window{
+    flex: 1;
+}
+.img-windowimg{
+    width: 500px;
+    height: 500px;
+}
+.choice-window{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 80px;
+    padding-top: 100px;
+}
+.choice-window select{
+    width: 10vw;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-bottom: 40px;
+}
+.btn-guess{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: darkred;
+    color: #fff;
+    width: 10vw;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 50px;
+}
+@media only screen and (max-width: 900px) {
+    .choice-window{
+        align-items: center;
+    }
+    .img-window img{
+        width: 30vw;
+        height: 30vw;
+    }
+}
+
