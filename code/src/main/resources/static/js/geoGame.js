@@ -1,5 +1,7 @@
 const guessImage = document.getElementById("guessImage");
+const guessWindow = document.getElementById("guessWindow");
 const guessButton = document.getElementById("guessButton");
+const guessCounter = document.getElementById("guessCounter");
 const guessChoice_1 = document.getElementById("guessChoice_1");
 const guessChoice_2 = document.getElementById("guessChoice_2");
 const guessChoice_3 = document.getElementById("guessChoice_3");
@@ -9,12 +11,31 @@ let level = 0;
 
 draw();
 
+function endGame() {
+    guessCounter.innerHTML = "Guess " + level + " out of " + (images.length-1);
+    guessWindow.innerHTML = "";
+
+    let h3 = document.createElement("h3");
+    h3.innerHTML = "Score: " + score;
+
+    let button = document.createElement("button");
+    button.setAttribute("class", "btn-move");
+    button.innerHTML = "Finish"
+    button.onclick = () => {
+        location.href = "/geo/end?score=" + score;
+    }
+
+    guessWindow.appendChild(h3);
+    guessWindow.appendChild(button);
+}
+
 function draw() {
     if (level === images.length-1) {
-        location.href = "/geo/end?score=" + score;
+        endGame()
     }
     else {
         guessImage.src = "/images/playlists/" + path + "/" + images[level];
+        guessCounter.innerHTML = "Guess " + (level+1) + " out of " + (images.length-1);
         guessChoice_1.selectedIndex = 0;
         guessChoice_2.selectedIndex = 0;
         guessChoice_3.selectedIndex = 0;
