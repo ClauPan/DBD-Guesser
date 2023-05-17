@@ -29,7 +29,7 @@ import java.nio.file.StandardCopyOption;
 @SessionAttributes("playlist")
 public class PlaylistController {
 
-    private final String PLAYLIST_DIR = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\images\\playlists";
+    public static final String PLAYLIST_DIR = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\images\\playlists";
     private Path TEMP_DIR = null;
     public static boolean DELETE_TEMP = true;
     private final PlaylistService playlistService;
@@ -47,7 +47,12 @@ public class PlaylistController {
     public String getPlaylists(Model model, @RequestParam String ptype) {
         DELETE_TEMP = true;
         model.addAttribute("playlists", playlistService.getPlaylistsByType(ptype));
-        return "/playlist/list";
+        if (ptype.equals("geo")) {
+            return "/playlist/listGeo";
+        }
+        else {
+            return "/playlist/listTrivia";
+        }
     }
 
     @GetMapping("/playlists/entry")

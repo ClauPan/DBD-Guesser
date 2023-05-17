@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{fragments/headers :: header}"></head>
+<body>
+<div th:insert="~{fragments/nav :: top}"></div>
+
+<div class="button-wrapper-p">
+  <div class="button-container-p">
+    <form action="#" th:action="@{/triviaGame}" method="get">
+      <input type="hidden" name="type" th:value="survivor">
+      <input class="playlist" type="submit" id="survivor" value="" th:style="'background: url(\''+'/images/image.png'+'\') no-repeat;'">
+    </form>
+    <span th:text="Survivor">name</span>
+  </div>
+  <div class="button-container-p">
+    <form action="#" th:action="@{/triviaGame}" method="get">
+      <input type="hidden" name="type" th:value="killer">
+      <input class="playlist" type="submit" id="killer" value="" th:style="'background: url(\''+'/images/image.png'+'\') no-repeat;'">
+    </form>
+    <span th:text="Killer">name</span>
+  </div>
+</div>
+
+</body>
+
+</html>
