@@ -12,21 +12,25 @@ let level = 0;
 draw();
 
 function endGame() {
-    guessCounter.innerHTML = "Guess " + level + " out of " + (images.length-1);
+    guessCounter.innerHTML = "Game Over";
     guessWindow.innerHTML = "";
+
+    let secondDiv = document.createElement("div");
+    secondDiv.setAttribute("class", "finish");
 
     let h3 = document.createElement("h3");
     h3.innerHTML = "Score: " + score;
 
     let button = document.createElement("button");
-    button.setAttribute("class", "btn-move");
+    button.setAttribute("class", "btn-guess");
     button.innerHTML = "Finish"
     button.onclick = () => {
         location.href = "/geo/end?score=" + score + "&pid=" + pid;
     }
 
-    guessWindow.appendChild(h3);
-    guessWindow.appendChild(button);
+    secondDiv.appendChild(h3);
+    secondDiv.appendChild(button);
+    guessWindow.appendChild(secondDiv);
 }
 
 function draw() {

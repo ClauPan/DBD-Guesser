@@ -42,7 +42,6 @@ var survivor = [
     }
 
 ];
-
 var killer = [
     {
         question: "Choose a color.",

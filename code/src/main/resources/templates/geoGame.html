@@ -12,23 +12,30 @@
 <body>
 <div th:insert="~{fragments/nav :: top}"></div>
 
-<h2 id="guessCounter"></h2>
-<div id="guessWindow">
-    <img id="guessImage" src="" style="width: 500px; height: 500px;">
-    <div>
-        <select id="guessChoice_1" name="choice_1">
-            <option th:each="option : ${choice_1}" th:value="${option}" th:text="${option}"></option>
-        </select>
-        <select id="guessChoice_2" name="choice_2">
-            <option value="none">Can't tell</option>
-            <option th:each="option : ${choice_2}" th:value="${option}" th:text="${option}"></option>
-        </select>
-        <select id="guessChoice_3" name="choice_3">
-            <option th:each="option : ${choice_3}" th:value="${option}" th:text="${option}"></option>
-        </select>
-        <button class="btn-move" id="guessButton">Guess</button>
-    </div>
+<div class="container">
+    <div class="container-second"><h2 class="guessCounter" id="guessCounter"></h2>
+        <div class="guessWindow" id="guessWindow">
+            <div class="img-window">
+                <img id="guessImage" src="" style="width: 500px; height: 500px;">
+            </div>
+            <div class="choice-window">
+                <select id="guessChoice_1" name="choice_1">
+                    <option th:each="option : ${choice_1}" th:value="${option}" th:text="${option}"></option>
+                </select>
+                <select id="guessChoice_2" name="choice_2">
+                    <option value="none">Can't tell</option>
+                    <option th:each="option : ${choice_2}" th:value="${option}" th:text="${option}"></option>
+                </select>
+                <select id="guessChoice_3" name="choice_3">
+                    <option th:each="option : ${choice_3}" th:value="${option}" th:text="${option}"></option>
+                </select>
+                <button class="btn-guess" id="guessButton">Guess</button>
+            </div>
+        </div></div>
+
 </div>
+
+
 
 </body>
 <script th:inline="javascript">
