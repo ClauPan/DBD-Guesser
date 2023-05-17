@@ -2,6 +2,7 @@ package com.example.mvcproducts.controllers;
 
 import com.example.mvcproducts.domain.Playlist;
 import com.example.mvcproducts.domain.User;
+import com.example.mvcproducts.domain.UserPlaylistPlayed;
 import com.example.mvcproducts.services.PlaylistService;
 import com.example.mvcproducts.services.UserService;
 import org.springframework.security.core.Authentication;
@@ -15,7 +16,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 @Controller
-public class GeoController {
+public class GameController {
     public static final String[] GAME_PHASE_1 = {"map1", "map2", "map3"};
     public static final String[] GAME_PHASE_2 = {"var1", "var2", "var3"};
     public static final String[] GAME_PHASE_3 = {"str1", "str2", "str3"};
@@ -27,7 +28,7 @@ public class GeoController {
     private final PlaylistService playlistService;
     private final UserService userService;
 
-    public GeoController(PlaylistService playlistService, UserService userService) {
+    public GameController(PlaylistService playlistService, UserService userService) {
         this.playlistService = playlistService;
         this.userService = userService;
     }
@@ -43,6 +44,7 @@ public class GeoController {
                 filenames.add(img.getName());
             }
         }
+        model.addAttribute("pid", pid);
         model.addAttribute("path", path);
         model.addAttribute("images", filenames);
         model.addAttribute("choice_1", GAME_PHASE_1);
@@ -52,10 +54,20 @@ public class GeoController {
     }
 
     @RequestMapping("/geo/end")
-    public String geoEnd(Authentication authentication, @RequestParam("score") String score) {
+    public String geoEnd(Authentication authentication, @RequestParam("score") String score, @RequestParam("pid") Long pid) {
         User user = (User) authentication.getPrincipal();
-        user.setScore(user.getScore() + Integer.parseInt(score));
-        userService.save(user);
+        if (playlistService.getUserPlaylistPlayedByUserIdAndPlaylistId(user.getId(), pid) != null) {
+            UserPlaylistPlayed played = new UserPlaylistPlayed(user, playlistService.getPlaylistById(pid));
+            playlistService.save(played);
+            user.setScore(user.getScore() + Integer.parseInt(score));
+            userService.save(user);
+        }
         return "redirect:/";
+    }
+
+    @GetMapping("/trivia")
+    public String trivia(Model model, @RequestParam("type") String type) {
+        model.addAttribute("name", type);
+        return "triviaGame";
     }
 }

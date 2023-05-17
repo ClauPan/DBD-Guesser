@@ -93,9 +93,9 @@ public class PlaylistController {
 
     @GetMapping("/playlist/create/add")
     public String createPlaylist_addImage(Model model) {
-        model.addAttribute("GAME_PHASE_1", GeoController.GAME_PHASE_1);
-        model.addAttribute("GAME_PHASE_2", GeoController.GAME_PHASE_2);
-        model.addAttribute("GAME_PHASE_3", GeoController.GAME_PHASE_3);
+        model.addAttribute("GAME_PHASE_1", GameController.GAME_PHASE_1);
+        model.addAttribute("GAME_PHASE_2", GameController.GAME_PHASE_2);
+        model.addAttribute("GAME_PHASE_3", GameController.GAME_PHASE_3);
         return "playlist/createAdd";
     }
 
@@ -106,7 +106,7 @@ public class PlaylistController {
 
         String filename = playlistData.getImages().size() + "_" + choice_1 + "_" + choice_2 + "_" + choice_3 + ".png";
 
-        BufferedImage resizedImage = Thumbnails.of(file.getInputStream()).size(GeoController.MAX_WIDTH, GeoController.MAX_HEIGHT).asBufferedImage();
+        BufferedImage resizedImage = Thumbnails.of(file.getInputStream()).size(GameController.MAX_WIDTH, GameController.MAX_HEIGHT).asBufferedImage();
         ImageIO.write(resizedImage, "png", Paths.get(TEMP_DIR.toString() + "\\" + filename).toFile());
 
         playlistData.addImage(filename);
@@ -117,9 +117,9 @@ public class PlaylistController {
     @GetMapping("/playlist/create/edit")
     public String createPlaylist_editImage(Model model, @RequestParam("index") String index) {
         model.addAttribute("index", index);
-        model.addAttribute("GAME_PHASE_1", GeoController.GAME_PHASE_1);
-        model.addAttribute("GAME_PHASE_2", GeoController.GAME_PHASE_2);
-        model.addAttribute("GAME_PHASE_3", GeoController.GAME_PHASE_3);
+        model.addAttribute("GAME_PHASE_1", GameController.GAME_PHASE_1);
+        model.addAttribute("GAME_PHASE_2", GameController.GAME_PHASE_2);
+        model.addAttribute("GAME_PHASE_3", GameController.GAME_PHASE_3);
         return "/playlist/createEdit";
     }
 

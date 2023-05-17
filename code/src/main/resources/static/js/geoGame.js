@@ -22,7 +22,7 @@ function endGame() {
     button.setAttribute("class", "btn-move");
     button.innerHTML = "Finish"
     button.onclick = () => {
-        location.href = "/geo/end?score=" + score;
+        location.href = "/geo/end?score=" + score + "&pid=" + pid;
     }
 
     guessWindow.appendChild(h3);
