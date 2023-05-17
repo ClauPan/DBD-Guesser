@@ -43,7 +43,15 @@ public class ProfileController {
     }
 
     @GetMapping("/profile")
-    public String showUserProfile(Authentication authentication, Model model) {
+    public String profileInfo(Authentication authentication, Model model) {
+        PlaylistController.DELETE_TEMP = true;
+        User user = (User) authentication.getPrincipal();
+        model.addAttribute("profile", user);
+        return "profileInfo";
+    }
+
+    @GetMapping("/profile/edit")
+    public String profileEdit(Authentication authentication, Model model) {
         PlaylistController.DELETE_TEMP = true;
         User user = (User) authentication.getPrincipal();
         model.addAttribute("profile", user);
