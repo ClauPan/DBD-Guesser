@@ -17,9 +17,9 @@ import java.util.ArrayList;
 
 @Controller
 public class GameController {
-    public static final String[] GAME_PHASE_1 = {"map1", "map2", "map3"};
-    public static final String[] GAME_PHASE_2 = {"var1", "var2", "var3"};
-    public static final String[] GAME_PHASE_3 = {"str1", "str2", "str3"};
+    public static final String[] GAME_PHASE_1 = {"The MacMillan Estate", "Autohaven Wreckers", "Coldwind Farm", "Crotus Prenn Asylum", "Haddonfield", "Backwater Swamp", "Léry's Memorial Institute", "Red Forest", "Springwood", "Gideon Meat Plant", "Yamaoka Estate", "Ormond", "Grave of Glenvale", "Silent Hill", "Raccoon City", "Forsaken Boneyard", "Withered Isle", "The Decimated Borgo", "Dvarka Deepwood"};
+    public static final String[] GAME_PHASE_2 = {"Coal Tower","Groaning Storehouse","Ironworks of Misery","Shelter Woods","Suffocation Pit","Azarov's Resting Place","Blood Lodge","Gas Heaven","Wreckers' Yard","Wretched Shop","Fractured Cowshed","Rancid Abattoir","Rotten Fields","The Thompson House","Torment Creek","Disturbed Ward","Father Campbell's Chapel","Lampkin Lane","The Pale Rose","Grim Pantry","Treatment Theatre","Mother's Dwelling","The Temple of Purgation","Badham Preschool I","Badham Preschool II","Badham Preschool III","Badham Preschool IV","Badham Preschool V","The Game","Family Residence","Sanctum of Wrath","Mount Ormond Resort","Dead Dawg Saloon","Midwich Elementary School","Raccoon City Police Station East Wing","Raccoon City Police Station West Wing","Eyrie of Crows","Garden of Joy","The Shattered Square","Toba Landing"};
+    public static final String[] GAME_PHASE_3 = {"The Basement","The Killer Shack","Hill","L-T Walls","Pallet Gyms","Jungle Gyms","4-Wall Gyms","Debris Pile Gyms","Locker Gyms","Labyrinth Gyms","Variant Gyms"};
 
     public static final int MAX_WIDTH = 500;
     public static final int MAX_HEIGHT = 500;
