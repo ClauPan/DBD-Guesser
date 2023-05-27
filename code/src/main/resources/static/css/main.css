@@ -4,8 +4,8 @@ body {
     margin-left: auto;
     margin-right: auto;
     background-color: black;
-    background-image: url("../images/dbd1.png");
-    background-position:50% 0%;
+    background-image: url("../images/site_img/dbd1.png");
+    background-position:50% 0 ;
     background-repeat: space;
     display: flex;
     flex-direction: column;
@@ -159,18 +159,22 @@ nav a:hover {
     }
 }
 .button-container input[id="geo"] {
-    background: url('../images/image.png') no-repeat;
+    background: url('../images/site_img/geoGame.png') no-repeat;
+    background-size: 400px;
 }
 .button-container input[id="geo"]:hover {
-    background: url('../images/images1.png') no-repeat;
+    background: url('../images/site_img/geoGame_hover.png') no-repeat;
     cursor: pointer;
+    background-size: 400px;
 }
 .button-container input[id="trivia"] {
-    background: url('../images/image.png') no-repeat;
+    background: url('../images/site_img/triviaGame.png') no-repeat;
+    background-size: 400px;
 }
 .button-container input[id="trivia"]:hover {
-    background: url('../images/images1.png') no-repeat;
+    background: url('../images/site_img/triviaGame_hover.png') no-repeat;
     cursor: pointer;
+    background-size: 400px;
 }
 .button-wrapper-p {
     display: grid;
@@ -225,7 +229,7 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("../images/back.png");
+    background-image: url("../images/site_img/back.png");
     margin-top: 75px;
     width: 50vw;
     height: auto;
@@ -246,7 +250,6 @@ nav a:hover {
     flex-direction: column;
     align-items: start;
     padding-left: 30px;
-
 
 }
 .title-text{
@@ -357,7 +360,7 @@ nav a:hover {
     margin-left: auto;
     margin-right: auto;
     background-color: black;
-    background-image: url("../images/load.gif");
+    background-image: url("../images/site_img/load.gif");
     background-position:50% 40%;
     background-repeat: no-repeat;
 }
@@ -627,7 +630,7 @@ input[type="password"] {
 .img-window{
     flex: 1;
 }
-.img-windowimg{
+.img-window img{
     width: 500px;
     height: 500px;
 }
@@ -692,12 +695,33 @@ input[type="password"] {
     color: #A88389;
     margin: 50px;
 }
-.button-container-trivia span{
-    background-color: #282b2b;
-    padding: 5px;
-    border-radius: 2px;
-    font-size: 20px;
+.button-trivia {
+    width: 300px;
+    height: 300px;
+    margin-left: 100px;
+    margin-right: 100px;
+    position: relative;
+    border: none;
 }
+.button-container-trivia input[id="survivor"] {
+    background: url('../images/site_img/mixedsurvivorscollage.png') no-repeat;
+    background-size: 300px;
+}
+.button-container-trivia input[id="survivor"]:hover {
+    background: url('../images/site_img/mixedsurvivors_hover.png') no-repeat;
+    cursor: pointer;
+    background-size: 300px;
+}
+.button-container-trivia input[id="killer"] {
+    background: url('../images/site_img/mixedkillerscollage.png') no-repeat;
+    background-size: 300px;
+}
+.button-container-trivia input[id="killer"]:hover {
+    background: url('../images/site_img/mixed_killer_hover.png') no-repeat;
+    cursor: pointer;
+    background-size: 300px;
+}
+
 @media only screen and (max-width: 900px) {
     .button-wrapper-trivia{
         flex-direction: column;

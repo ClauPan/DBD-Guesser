@@ -4,7 +4,7 @@
 <div th:fragment="top" class="header-container">
     <div class="header">
         <span class="header-text">
-          <a href="/"><img th:src="@{/images/logo.png}" alt="logo"/></a>
+          <a href="/"><img th:src="@{/images/site_img/logo.png}" alt="logo"/></a>
         </span>
     </div>
     <nav id="main-nav" th:class="${#authentication.principal != null and #authorization.expression('hasRole(''ROLE_CREATOR'')')} ? 'creator' : ''">

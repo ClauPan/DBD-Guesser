@@ -9,16 +9,14 @@
   <div class="button-container-trivia">
     <form action="#" th:action="@{/trivia}" method="get">
       <input type="hidden" name="type" th:value="survivor">
-      <input class="playlist" type="submit" id="survivor" value="" th:style="'background: url(\''+'/images/image.png'+'\') no-repeat;'">
+      <input class="button-trivia" type="submit" id="survivor" value="" >
     </form>
-    <span th:text="Survivor">name</span>
   </div>
   <div class="button-container-trivia">
     <form action="#" th:action="@{/trivia}" method="get">
       <input type="hidden" name="type" th:value="killer">
-      <input class="playlist" type="submit" id="killer" value="" th:style="'background: url(\''+'/images/image.png'+'\') no-repeat;'">
+      <input class="button-trivia" type="submit" id="killer" value="" >
     </form>
-    <span th:text="Killer">name</span>
   </div>
 </div>
 
