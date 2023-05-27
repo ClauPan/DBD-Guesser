@@ -12,40 +12,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class DataLoader implements CommandLineRunner {
-  private final UserService userService;
-  private final PlaylistService playlistService;
 
-  public DataLoader(UserService userService, PlaylistService playlistService) {
-    this.userService = userService;
-    this.playlistService = playlistService;
-  }
+  public DataLoader() {}
 
   @Override
-  public void run(String... args) {
-    PasswordEncoder bcrypt = new BCryptPasswordEncoder();
-    User user1=new User("user1",bcrypt.encode("user1"), "user1@gmail.com");
-    user1.getRoles().add(Role.ROLE_USER);
-    User user2=new User("user2",bcrypt.encode("user2"), "user2@gmail.com");
-    user2.getRoles().add(Role.ROLE_ADMIN);
-    User user3=new User("user3",bcrypt.encode("user3"), "user3@gmail.com");
-    user3.getRoles().add(Role.ROLE_ADMIN);
-    user3.getRoles().add(Role.ROLE_CREATOR);
-    userService.save(user1);
-    userService.save(user2);
-    userService.save(user3);
-
-    Playlist playlist1 = new Playlist("playlist1", "geo", "desc1 dlhnwqadkjwqnhdkjadnsjkdnxaksjdnaskjdnszmx  dwkb xasujed qwsd askue dx wsduj dxwehndwkjd lasn  enwqkdnhka/n. wdjwjkdasgbawikkjwebgd. SS", user2);
-    Playlist playlist2 = new Playlist("playlist2", "trivia", "desc2", user2);
-    Playlist playlist3 = new Playlist("playlist3", "geo", "desc3", user1);
-    Playlist playlist4 = new Playlist("playlist4", "geo", "desc4", user1);
-    Playlist playlist5 = new Playlist("playlist5", "geo", "desc5", user1);
-    Playlist playlist6 = new Playlist("test", "geo", "testdesc", user3);
-
-    playlistService.save(playlist1);
-    playlistService.save(playlist2);
-    playlistService.save(playlist3);
-    playlistService.save(playlist4);
-    playlistService.save(playlist5);
-    playlistService.save(playlist6);
-  }
+  public void run(String... args) {}
 }

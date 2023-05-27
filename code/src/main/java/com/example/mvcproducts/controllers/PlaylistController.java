@@ -84,8 +84,16 @@ public class PlaylistController {
     }
 
     @GetMapping("/images/playlists/temp/*/{filename}")
-    public ResponseEntity<byte[]> getProfilePic(@PathVariable String filename) throws IOException {
+    public ResponseEntity<byte[]> getTempImages(@PathVariable String filename) throws IOException {
         Path path = Paths.get(TEMP_DIR + "\\" + filename);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setCacheControl(CacheControl.noCache().getHeaderValue());
+        return new ResponseEntity<>(Files.readAllBytes(path), headers, HttpStatus.OK);
+    }
+
+    @GetMapping("/images/playlists/{uid}_{pid}_{pn}/thumb.png")
+    public ResponseEntity<byte[]> getPlaylistThumbnail(@PathVariable Long uid, @PathVariable Long pid, @PathVariable String pn) throws IOException {
+        Path path = Paths.get(PLAYLIST_DIR + "\\" + uid + "_" + pid + "_" + pn + "\\thumb.png");
         HttpHeaders headers = new HttpHeaders();
         headers.setCacheControl(CacheControl.noCache().getHeaderValue());
         return new ResponseEntity<>(Files.readAllBytes(path), headers, HttpStatus.OK);
