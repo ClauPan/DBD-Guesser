@@ -12,12 +12,11 @@
         <div class="button-container-p">
             <form action="#" th:action="@{/playlists/entry}" method="get">
                 <input type="hidden" name="pid" th:value="${playlist.id}">
-                <input class="playlist" type="submit" id="playlist" value="" th:style="'background: url(\''+'/images/playlists/'+${playlist.user.id}+'_'+${playlist.id}+'_'+${playlist.name}+'/thumb.png'+'\') no-repeat;'">
+                <input class="playlist" type="submit" id="playlist" value="" th:style="'background: url(\''+'/images/playlists/'+${playlist.user.id}+'_'+${playlist.id}+'_'+${playlist.name}+'/thumb.png'+'\') no-repeat; background-size: 200px;'">
             </form>
             <span th:text="${playlist.name}">name</span>
         </div>
     </div>
 </div>
 </body>
-
 </html>

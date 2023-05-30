@@ -9,7 +9,7 @@
         <div class="col">
             <div class="col1" id="col1">
                 <div class="title-text">
-                    <span th:text="${playlistEntry.name}"></span>
+                    <span id="title" th:text="${playlistEntry.name}"></span>
                 </div>
                 <div class="description">
                     <span id="desc" th:text="${playlistEntry.description}"></span>
@@ -46,18 +46,22 @@
 </div>
 </body>
 <script>
-    const spanElement = document.getElementById('desc');
+
+    var desc = document.querySelector('.description span');
+    var span = document.querySelector('.title-text span');
     const col1 = document.getElementById('col1');
     const col2 = document.getElementById('col2');
+    var maxWidth = span.offsetWidth;
 
-    const characterLimit = 100;
-
-    const spanText = spanElement.innerText;
-
-    if (spanText.length < characterLimit) {
-        let len = 250-spanText.length/8 -1
-        col1.style.marginRight = len.toString()+'px'
-        col2.style.marginLeft = len.toString()+'px'
+    if(maxWidth<500){
+        let len = 250-maxWidth/8 -1
+        col1.style.marginRight = len+'px'
+        col2.style.marginLeft = len+'px'
+        span.style.width = maxWidth + 'px';
+    }else{
+        span.style.width = 500 + 'px';
+        col2.style.marginLeft = 50+'px'
     }
+
 </script>
 </html>
