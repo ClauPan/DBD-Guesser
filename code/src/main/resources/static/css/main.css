@@ -1,3 +1,4 @@
+/* main body all pages */
 body {
     height:100%;
     width:960px;
@@ -39,6 +40,7 @@ body {
     font-size: 32px;
     color:brown;
 }
+ /*nav bar*/
 nav {
     display: flex;
     align-items: center;
@@ -158,6 +160,7 @@ nav a:hover {
         margin-top: 20px;
     }
 }
+/*home page choose between games*/
 .button-container input[id="geo"] {
     background: url('../images/site_img/geoGame.png') no-repeat;
     background-size: 400px;
@@ -176,6 +179,7 @@ nav a:hover {
     cursor: pointer;
     background-size: 400px;
 }
+/*playlists geo*/
 .button-wrapper-p {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -222,6 +226,7 @@ nav a:hover {
         grid-template-columns: repeat(1, 1fr);
     }
 }
+/*playlist page*/
 .container {
     display: flex;
     flex-direction: column;
@@ -254,7 +259,6 @@ nav a:hover {
     display: inline-block;
     padding-bottom: 30px;
 }
-
 .title-text span {
     display: inline-block;
     font-size: 35px;
@@ -355,6 +359,7 @@ nav a:hover {
         width: 50%;
     }
 }
+/*login and register*/
 .login {
     height: 100%;
     width: 960px;
@@ -425,6 +430,7 @@ input[type="password"] {
     background-color: darkred;
     color: white;
 }
+/*user edit account page*/
 .profile-info{
     margin-top: -20px;
     padding-top: 100px;
@@ -490,6 +496,7 @@ input[type="password"] {
         width: 50%;
     }
 }
+/*create playlist*/
 .move-wrap{
     display: flex;
 }
@@ -603,7 +610,7 @@ input[type="password"] {
     font-weight: normal;
     font-family: Arial, sans-serif;
 }
-
+/*geo game*/
 .container-second{
     display: flex;
     flex-direction: column;
@@ -679,7 +686,7 @@ input[type="password"] {
         height: 30vw;
     }
 }
-
+/*trivia game first page*/
 .button-wrapper-trivia {
     display: flex;
     align-items: center;
@@ -722,13 +729,12 @@ input[type="password"] {
     cursor: pointer;
     background-size: 300px;
 }
-
 @media only screen and (max-width: 900px) {
     .button-wrapper-trivia{
         flex-direction: column;
     }
 }
-
+/*trivia game page*/
 .quiz-wrapper{
     display: flex;
     flex-direction: column;
@@ -778,7 +784,7 @@ input[type="password"] {
 .radio:checked + span:before {
     background-color: darkred; /* Checked background color of the radio button */
 }
-
+/*user profile info*/
 .profile-info{
     display: flex;
     flex-direction: column;
