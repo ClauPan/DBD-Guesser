@@ -438,6 +438,12 @@ input[type="password"] {
 }
 .profile-img{
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: inherit;
+    justify-content: left;
+    align-items: flex-start;
+    margin-left: -255px;
+
 }
 .profile-img img{
     margin-bottom: 20px;
@@ -483,6 +489,11 @@ input[type="password"] {
 }
 .file-input-container .btn-profile:hover {
     background-color: grey;
+}
+@media only screen and (max-width: 1000px) {
+    .profile-img{
+        margin-left: 0;
+    }
 }
 @media only screen and (max-width: 768px) {
     .profile-info{
@@ -747,6 +758,7 @@ input[type="password"] {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-left: 20px;
 }
 .quiz-container h3{
     color: white;
@@ -812,7 +824,7 @@ input[type="password"] {
     border-radius: 5px;
     margin-right: 33px;
 }
-.profile-edit span{
+.profile-name span{
     font-size: 28px;
     font-weight: bold;
     background-color: #323737;

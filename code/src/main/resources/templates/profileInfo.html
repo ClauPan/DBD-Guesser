@@ -11,12 +11,14 @@
         <img th:src="@{'/images/profiles/'+${profile.id}+'_'+${profile.username}+'/profile.png'}">
       </div>
       <div class="profile-edit">
-        <span th:text="${profile.username}"></span>
         <form action="#" th:action="@{/profile/edit}" method="get">
           <input class="btn" type="hidden" id="create" value="">
           <button class="btn-edit" type="submit">Edit Account</button>
         </form>
       </div>
+    </div>
+    <div class="profile-name">
+      <span th:text="${profile.username}"></span>
     </div>
     <div class="score">
       <span th:text="'Total Score: ' + ${profile.score}"></span>
