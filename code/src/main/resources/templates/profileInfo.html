@@ -5,12 +5,12 @@
 <body>
 <div th:insert="~{fragments/nav :: top}"></div>
 <div class="container">
-  <div class="profile-info" th:object="${profile}">
-    <div class="profile">
-      <div class="profile-img">
+  <div class="profile-info-info" th:object="${profile}">
+    <div class="profile-columns">
+      <div class="profile-img-info">
         <img th:src="@{'/images/profiles/'+${profile.id}+'_'+${profile.username}+'/profile.png'}">
       </div>
-      <div class="profile-edit">
+      <div class="profile-edit-info">
         <form action="#" th:action="@{/profile/edit}" method="get">
           <input class="btn" type="hidden" id="create" value="">
           <button class="btn-edit" type="submit">Edit Account</button>
@@ -20,9 +20,9 @@
     <div class="profile-name">
       <span th:text="${profile.username}"></span>
     </div>
-    <div class="score">
-      <span th:text="'Total Score: ' + ${profile.score}"></span>
-    </div>
+  </div>
+  <div class="score">
+    <span th:text="'Total Score: ' + ${profile.score}"></span>
   </div>
 </div>
 </body>
