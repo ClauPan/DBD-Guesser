@@ -442,7 +442,6 @@ input[type="password"] {
     flex-direction: inherit;
     justify-content: left;
     align-items: flex-start;
-    margin-left: -255px;
 
 }
 .profile-img img{
@@ -458,6 +457,19 @@ input[type="password"] {
 .profile-email input{
     margin-bottom: 10px;
 }
+.btn-profile1 {
+    padding: 10px 20px;
+    background-color: darkred;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+.btn-profile1:hover {
+    background-color: grey;
+}
 .btn-profile {
     padding: 10px 20px;
     background-color: darkred;
@@ -466,6 +478,8 @@ input[type="password"] {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    margin-left: 20px;
+
 }
 .btn-profile:hover {
     background-color: grey;
@@ -486,6 +500,7 @@ input[type="password"] {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    margin-left: 20px;
 }
 .file-input-container .btn-profile:hover {
     background-color: grey;
