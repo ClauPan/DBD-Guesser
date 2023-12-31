@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:insert="~{fragments/headers :: header}"></head>
 <body>
+<div class="intro" sec:authorize="!isAuthenticated()">
+    <h1 class="loading-header">
+        <span class="loading">Loading...</span>
+    </h1>
+</div>
+<script th:src="@{/js/intro.js}"></script>
 <div th:insert="~{fragments/nav :: top}"></div>
 <div class="container">
     <div class="button-wrapper">
