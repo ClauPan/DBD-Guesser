@@ -59,22 +59,22 @@ body {
     color: white;
     transform: translate(10vw, 10vw);
 }
-/*.loading{*/
-/*    position: relative;*/
-/*    display: inline-block;*/
-/*    bottom: -20px;*/
-/*    opacity: 0;*/
-/*}*/
-/*.loading.active{*/
-/*    bottom: 0;*/
-/*    opacity: 1;*/
-/*    transition: ease-in-out 0.5s;*/
-/*}*/
-/*.logo.fade{*/
-/*    bottom: 150px;*/
-/*    opacity: 0;*/
-/*    transition: ease-in-out 0.5s;*/
-/*}*/
+.loading{
+    position: relative;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+}
+.loading.active{
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+}
+.loading.fade{
+    bottom: 150px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+}
  /*nav bar*/
 nav {
     position: absolute;

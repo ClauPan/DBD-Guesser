@@ -4,17 +4,17 @@ let loading = document.querySelector('.loading');
 
 window.addEventListener('DOMContentLoaded', ()=>{
     setTimeout(()=>{
-        loading.forEach((span, idx) => {
+        loadingHeader.forEach((span, idx) => {
             setTimeout(()=>{
-                span.classList.add('active');
+                loading.classList.add('active');
             }, (idx + 1) * 400)
         });
 
         setTimeout(()=>{
-            loading.forEach((span, idx) => {
+            loadingHeader.forEach((span, idx) => {
                 setTimeout(()=>{
-                    span.classList.remove('active')
-                    span.classList.add('fade');
+                    loading.classList.remove('active')
+                    loading.classList.add('fade');
                 }, (idx + 1) * 400)
             });
         }, 2000);
