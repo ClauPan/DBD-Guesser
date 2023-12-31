@@ -2,14 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head th:insert="~{fragments/headers :: header}"></head>
+<head>
+    <title>DBD Guessr</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" th:href="@{/css/main.css}" type="text/css"/>
+    <link rel="icon" type="image/x-icon" href="/images/site_img/favicon.ico">
+    <script th:src="@{/js/intro.js}" defer></script>
+</head>
 <body>
 <div class="intro" sec:authorize="!isAuthenticated()">
-    <h1 class="loading-header">
-        <span class="loading">Loading...</span>
+    <h1 class="loading-header" sec:authorize="!isAuthenticated()">
+        <span class="loading" sec:authorize="!isAuthenticated()">Loading...</span>
     </h1>
 </div>
-<script src="../static/js/intro.js"></script>
 <div th:insert="~{fragments/nav :: top}"></div>
 <div class="container">
     <div class="button-wrapper">
