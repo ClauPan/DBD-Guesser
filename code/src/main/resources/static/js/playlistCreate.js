@@ -35,7 +35,7 @@ function drawImages() {
         formEdit_input.value = images[i].substring(0, images[i].indexOf('_'));
 
         let formEdit_button = document.createElement("button");
-        formEdit_button.setAttribute("class", "btn-primary");
+        formEdit_button.setAttribute("class", "btn-edit-delete");
         formEdit_button.type = "submit";
         formEdit_button.innerHTML = "Edit";
 
@@ -54,7 +54,7 @@ function drawImages() {
 
 
         let formDelete_button = document.createElement("button");
-        formDelete_button.setAttribute("class", "btn-primary");
+        formDelete_button.setAttribute("class", "btn-edit-delete");
         formDelete_button.type = "submit";
         formDelete_button.innerHTML = "Delete";
 
