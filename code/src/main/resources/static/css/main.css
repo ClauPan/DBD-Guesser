@@ -19,32 +19,35 @@ body {
     margin-top: 70px;
 }
 .header {
+    position: absolute;
+    z-index: 1000;
     display: flex;
     align-items: center;
-    position: absolute;
     left: 150px;
-    top:20px
+    top:20px;
+    margin-left: 20px;
 }
 .header img {
-    margin-right: 20px;
+    margin-top: 15px;
     alignment: left;
-    width: 150px;
+    width: 100px;
 }
 .header-text {
     display: flex;
     align-items: center;
 }
 .header-text a {
-    margin-right: 20px;
+    margin-right: 50px;
     text-decoration: none;
     font-size: 32px;
     color:brown;
 }
  /*nav bar*/
 nav {
-    display: flex;
-    align-items: center;
     position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     right: 150px;
     padding: 20px 50px 20px calc(100vw - 750px);
     border-radius: 20px;
@@ -73,37 +76,76 @@ button.profilePic {
 .profilePage.pic {
     width: 100px;
     height: 100px;
-    padding-right: 10px;
+    padding-right: 30px;
 }
 .profileName{
     color: white;
+    padding-right: 30px;
 }
-nav a {
+.btn-login {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #2B1B1E;
-    color: #fff;
+    background-color: transparent;
+    color: darkred;
     text-decoration: none;
+    border: 2px solid darkred;
     border-radius: 4px;
     margin-right: 40px;
     cursor: pointer;
 }
-nav a:hover {
-    background-color: #56373D;
+.btn-login:hover {
+    background-color: transparent;
+    border: 2px solid darkblue;
+    color: darkblue;
+    cursor: pointer;
+}
+.btn-signup {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 4px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+.btn-signup:hover {
+    background-color: transparent;
+    border: 2px solid grey;
+    color: grey;
+    cursor: pointer;
+}
+.btn-logout {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 4px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+.btn-logout:hover {
+    background-color: transparent;
+    border: 2px solid grey;
+    color: grey;
     cursor: pointer;
 }
 .btn-create{
     padding: 14px 20px;
-    background-color: #2B1B1E;
+    background-color: transparent;
     color: #fff;
     border: none;
     text-decoration: none;
     border-radius: 4px;
-    margin-right: 40px;
+    margin-right: 5vw;
 }
 .btn-create:hover{
-    background-color: #56373D;
+    color: grey;
     cursor: pointer;
+    border-bottom: 2px solid grey;
 }
 @media screen and (max-width: 900px) {
     .header {
@@ -121,11 +163,12 @@ nav a:hover {
         padding: 20px 30px;
     }
 }
+/*home page choose between games*/
 .button {
-    width: 400px;
-    height: 400px;
-    margin-left: 100px;
-    margin-right: 100px;
+    width: 350px;
+    height: 350px;
+    margin-left: 50px;
+    margin-right: 50px;
     position: relative;
     border: none;
 }
@@ -136,9 +179,10 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 50px;
+    padding-bottom: 40px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 900px) {
     .button-wrapper {
         flex-direction: column;
     }
@@ -160,24 +204,23 @@ nav a:hover {
         margin-top: 20px;
     }
 }
-/*home page choose between games*/
 .button-container input[id="geo"] {
     background: url('../images/site_img/geoGame.png') no-repeat;
-    background-size: 400px;
+    background-size: 350px;
 }
 .button-container input[id="geo"]:hover {
     background: url('../images/site_img/geoGame_hover.png') no-repeat;
     cursor: pointer;
-    background-size: 400px;
+    background-size: 350px;
 }
 .button-container input[id="trivia"] {
     background: url('../images/site_img/triviaGame.png') no-repeat;
-    background-size: 400px;
+    background-size: 350px;
 }
 .button-container input[id="trivia"]:hover {
     background: url('../images/site_img/triviaGame_hover.png') no-repeat;
     cursor: pointer;
-    background-size: 400px;
+    background-size: 350px;
 }
 /*playlists geo*/
 .button-wrapper-p {
@@ -232,12 +275,12 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("../images/site_img/back.png");
+    background: rgba(40, 43, 43, 0.9);
     margin-top: 75px;
-    width: 50vw;
+    width: auto;
     height: auto;
     border-radius: 10px;
-    padding-bottom: 50px;
+    padding: 50px;
 }
 .items-container{
     margin-top: 20px;

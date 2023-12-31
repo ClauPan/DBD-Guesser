@@ -4,19 +4,22 @@
 <head th:insert="~{fragments/headers :: header}"></head>
 <body>
 <div th:insert="~{fragments/nav :: top}"></div>
-<div class="button-wrapper">
-    <div class="button-container">
-        <form action="#" th:action="@{/playlists}" method="get">
-            <input type="hidden" name="ptype" value="geo">
-            <input class="button" type="submit" id="geo" value="">
-        </form>
-    </div>
-    <div class="button-container">
-        <form action="#" th:action="@{/playlists}" method="get">
-            <input type="hidden" name="ptype" value="trivia">
-            <input class="button" type="submit" id="trivia" value="">
-        </form>
+<div class="container">
+    <div class="button-wrapper">
+        <div class="button-container">
+            <form action="#" th:action="@{/playlists}" method="get">
+                <input type="hidden" name="ptype" value="geo">
+                <input class="button" type="submit" id="geo" value="">
+            </form>
+        </div>
+        <div class="button-container">
+            <form action="#" th:action="@{/playlists}" method="get">
+                <input type="hidden" name="ptype" value="trivia">
+                <input class="button" type="submit" id="trivia" value="">
+            </form>
+        </div>
     </div>
 </div>
+
 </body>
 </html>

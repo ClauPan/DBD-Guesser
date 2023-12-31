@@ -9,8 +9,8 @@
     </div>
     <nav id="main-nav" th:class="${#authentication.principal != null and #authorization.expression('hasRole(''ROLE_CREATOR'')')} ? 'creator' : ''">
         <div sec:authorize="!isAuthenticated()">
-            <a href="/auth/login">Log In</a>
-            <a href="/auth/register">Sign Up</a>
+            <a  class="btn-login" href="/auth/login">Log In</a>
+            <a class="btn-signup" href="/auth/register">Sign Up</a>
         </div>
         <div sec:authorize="isAuthenticated()" class="logged">
             <div class="create-playlist" sec:authorize="hasRole('ROLE_CREATOR')">
@@ -25,7 +25,7 @@
                 </form>
                 <div class="profileName" th:text="${#authentication.name}"></div>
             </div>
-            <a href="/auth/logout" class="logout-button">Logout</a>
+            <a href="/auth/logout" class="btn-logout">Logout</a>
         </div>
     </nav>
     <script th:inline="javascript">
