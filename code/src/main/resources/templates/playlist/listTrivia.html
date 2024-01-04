@@ -4,21 +4,23 @@
 <head th:insert="~{fragments/headers :: header}"></head>
 <body>
 <div th:insert="~{fragments/nav :: top}"></div>
-
-<div class="button-wrapper-trivia">
-  <div class="button-container-trivia">
-    <form action="#" th:action="@{/trivia}" method="get">
-      <input type="hidden" name="type" th:value="survivor">
-      <input class="button-trivia" type="submit" id="survivor" value="" >
-    </form>
-  </div>
-  <div class="button-container-trivia">
-    <form action="#" th:action="@{/trivia}" method="get">
-      <input type="hidden" name="type" th:value="killer">
-      <input class="button-trivia" type="submit" id="killer" value="" >
-    </form>
+<div class="container">
+  <div class="button-wrapper">
+    <div class="button-container-trivia">
+      <form action="#" th:action="@{/trivia}" method="get">
+        <input type="hidden" name="type" th:value="survivor">
+        <input class="button-trivia" type="submit" id="survivor" value="" >
+      </form>
+    </div>
+    <div class="button-container-trivia">
+      <form action="#" th:action="@{/trivia}" method="get">
+        <input type="hidden" name="type" th:value="killer">
+        <input class="button-trivia" type="submit" id="killer" value="" >
+      </form>
+    </div>
   </div>
 </div>
+
 
 </body>
 

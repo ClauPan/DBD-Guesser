@@ -14,6 +14,14 @@
                 <div class="description">
                     <span id="desc" th:text="${playlistEntry.description}"></span>
                 </div>
+                <form class="btn-play" action="#" th:action="@{/geo}" method="get">
+                    <input type="hidden" id="play" name="pid" th:value="${playlistEntry.id}">
+                    <button class="btn-primary"  type="submit">Play</button>
+                </form>
+                <form class="btn-back" action="#" th:action="@{/playlists}" method="get">
+                    <input class="btn" type="hidden" id="back" name="ptype" th:value="${playlistEntry.type}">
+                    <button class="btn-primary" type="submit">Back</button>
+                </form>
             </div>
             <div class="col2" id="col2">
                 <img th:src="'/images/playlists/'+${playlistEntry.user.id}+'_'+${playlistEntry.id}+'_'+${playlistEntry.name}+'/thumb.png'">
@@ -24,21 +32,11 @@
                         <button class="btn-primary"  type="submit">Rate Playlist</button>
                     </form>
                 </div>
+                <div class="user">
+                    <label>Playlist created by</label>
+                    <span th:text="${playlistEntry.user.username}"></span><br>
+                </div>
             </div>
-        </div>
-        <div class="btn-container">
-            <form action="#" th:action="@{/geo}" method="get">
-                <input type="hidden" id="play" name="pid" th:value="${playlistEntry.id}">
-                <button class="btn-primary"  type="submit">Play</button>
-            </form>
-            <div class="user">
-                <label>Playlist created by</label>
-                <span th:text="${playlistEntry.user.username}"></span><br>
-            </div>
-            <form action="#" th:action="@{/playlists}" method="get">
-                <input class="btn" type="hidden" id="back" name="ptype" th:value="${playlistEntry.type}">
-                <button class="btn-primary" type="submit">Back</button>
-            </form>
         </div>
     </div>
 

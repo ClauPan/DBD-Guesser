@@ -1,7 +1,7 @@
 /* main body all pages */
 body {
     height:100%;
-    width:960px;
+    width:100%;
     margin-left: auto;
     margin-right: auto;
     background-color: black;
@@ -11,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-attachment: fixed;
 }
 .header-container {
     display: flex;
@@ -259,10 +260,19 @@ button.profilePic {
 }
 /*playlists geo*/
 .button-wrapper-p {
+    flex-direction: column;
+    background: rgba(40, 43, 43, 0.99);
+    height: auto;
+    padding: 50px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 50px;
     margin-top: 200px;
+    align-self: center;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    width: 70%;
+
 }
 .button-container-p {
     display: inline-block;
@@ -270,12 +280,14 @@ button.profilePic {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #A88389;
+    position: relative;
+
 }
+
 .playlist {
-    width: 200px;
-    height: 200px;
-    background-size: 200px;
+    width: 300px !important;
+    height: 300px !important;
+    background-size: 300px !important;
     border: none;
     position: relative;
 }
@@ -283,11 +295,19 @@ button.profilePic {
     opacity: 0.5;
     cursor: pointer;
 }
-.button-container-p span{
-    background-color: #282b2b;
+
+
+.button-wrapper-p span{
     padding: 5px;
-    border-radius: 2px;
-    font-size: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    font-size: 30px;
+    color: white;
+    position: relative;
+    bottom: 50%;
+    transform: translateY(50%);
+    text-shadow: 2px 2px 4px #000;
+    font-family: 'Creepster', cursive;
 }
 @media only screen and (max-width: 800px) {
     .button-wrapper-p {
@@ -310,11 +330,10 @@ button.profilePic {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(40, 43, 43, 0.9);
+    background: rgba(40, 43, 43, 0.99);
     margin-top: 75px;
     width: auto;
     height: auto;
-    border-radius: 10px;
     padding: 50px;
 }
 .items-container{
@@ -329,23 +348,23 @@ button.profilePic {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: start;
-    padding-left: 30px;
 
 }
 .title-text {
     display: inline-block;
     padding-bottom: 30px;
+
 }
 .title-text span {
     display: inline-block;
     font-size: 35px;
     width: 500px;
-    color: brown;
+    color: darkred;
     font-weight: bolder;
     background-color: #323737;
     padding: 20px;
     border-radius: 20px;
+
 }
 .description {
     display: flex;
@@ -380,6 +399,22 @@ button.profilePic {
     color: brown;
     font-weight: bolder;
 }
+.btn-play{
+    align-self: center;
+    margin-top: 50px;
+
+}
+.btn-play button{
+    font-size: 30px; /* Adjust the font size as needed */
+    padding: 20px 35px; /* Adjust the padding as needed */
+}
+.btn-back {
+    margin-top: auto;
+}
+.btn-back button{
+    margin: 0 !important;
+    alignment: bottom;
+}
 .btn-rate{
      display: flex;
      justify-content: end;
@@ -396,15 +431,17 @@ button.profilePic {
 }
 .user{
     text-align: center;
-    font-size: 20px;
-    color: brown;
+    font-size: 15px;
+    color: darkred;
     font-weight: bold;
     background-color: #323737;
-    padding: 20px;
     border-radius: 20px;
-    width: 200px;
+    width: 150px;
     height: auto;
-
+    margin-left: auto;
+    margin-top: auto;
+    border: 20px;
+    padding: 5px 10px;
 }
 .btn-primary {
     background-color: darkred;
@@ -441,11 +478,10 @@ button.profilePic {
 .login {
     height: 100%;
     width: 960px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     background-color: black;
     background-image: url("../images/site_img/load.gif");
-    background-position:50% 40%;
+    background-position:50% -200%;
     background-repeat: no-repeat;
 }
 .login-center {
@@ -476,7 +512,7 @@ button.profilePic {
     align-items: center;
 }
 .form-login{
-    margin-top: 425px;
+    margin-top: 130px;
 }
 .form-group {
     margin-bottom: 15px;
@@ -821,38 +857,32 @@ input[type="password"] {
 }
 .button-container-trivia {
     display: inline-block;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #A88389;
-    margin: 50px;
 }
 .button-trivia {
-    width: 300px;
-    height: 300px;
-    margin-left: 100px;
-    margin-right: 100px;
+    width: 350px;
+    height: 350px;
+    margin-left: 50px;
+    margin-right: 50px;
     position: relative;
     border: none;
 }
 .button-container-trivia input[id="survivor"] {
     background: url('../images/site_img/mixedsurvivorscollage.png') no-repeat;
-    background-size: 300px;
+    background-size: 350px;
 }
 .button-container-trivia input[id="survivor"]:hover {
     background: url('../images/site_img/mixedsurvivors_hover.png') no-repeat;
     cursor: pointer;
-    background-size: 300px;
+    background-size: 350px;
 }
 .button-container-trivia input[id="killer"] {
     background: url('../images/site_img/mixedkillerscollage.png') no-repeat;
-    background-size: 300px;
+    background-size: 350px;
 }
 .button-container-trivia input[id="killer"]:hover {
     background: url('../images/site_img/mixed_killer_hover.png') no-repeat;
     cursor: pointer;
-    background-size: 300px;
+    background-size: 350px;
 }
 @media only screen and (max-width: 900px) {
     .button-wrapper-trivia{
