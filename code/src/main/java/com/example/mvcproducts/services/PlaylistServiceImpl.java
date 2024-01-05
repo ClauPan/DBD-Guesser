@@ -30,11 +30,17 @@ public class PlaylistServiceImpl implements PlaylistService{
     }
     @Override
     public List<Playlist> getPlaylistsByType(String type) {
-        return playlistRepository.getPlaylistsByType(type);
+        List<Playlist> playlists = playlistRepository.getPlaylistsByType(type);
+        for (Playlist playlist : playlists) {
+            playlist.setTotalRating(this.getOverallRating(playlist.getId()));
+        }
+        return playlists;
     }
     @Override
     public Playlist getPlaylistById(Long id) {
-        return playlistRepository.getPlaylistById(id);
+        Playlist playlist = playlistRepository.getPlaylistById(id);
+        playlist.setTotalRating(this.getOverallRating(playlist.getId()));
+        return playlist;
     }
     @Override
     public List<Rating> getRatingsByPlaylistId(Long playlistId) {
@@ -43,7 +49,7 @@ public class PlaylistServiceImpl implements PlaylistService{
     @Override
     public double getOverallRating(Long playlistId) {
         List<Rating> ratings = this.getRatingsByPlaylistId(playlistId);
-        if (ratings.size() > 0) {
+        if (!ratings.isEmpty()) {
             double ratingScore = 0;
             for (Rating rating : ratings) {
                 ratingScore += rating.getValue();

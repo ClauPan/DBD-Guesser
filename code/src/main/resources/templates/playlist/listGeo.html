@@ -8,14 +8,17 @@
 <div th:insert="~{fragments/nav :: top}"></div>
 
 <div class="button-wrapper-p">
-    <div th:each="playlist : ${playlists}" >
+    <div class="button-wrapper-all" th:each="playlist : ${playlists}" >
         <div class="button-container-p">
             <form action="#" th:action="@{/playlists/entry}" method="get">
                 <input type="hidden" name="pid" th:value="${playlist.id}">
                 <input class="playlist" type="submit" id="playlist" value="" th:style="'background: url(\''+'/images/playlists/'+${playlist.user.id}+'_'+${playlist.id}+'_'+${playlist.name}+'/thumb.png'+'\') no-repeat; background-size: 200px;'">
             </form>
         </div>
-        <span th:text="${playlist.name}">name</span>
+        <div class="text-wrapper">
+            <span th:text="${playlist.name}">name</span>
+            <span th:text="'Rating: ' + ${playlist.totalRating} + '/5'"></span>
+        </div>
     </div>
 </div>
 </body>

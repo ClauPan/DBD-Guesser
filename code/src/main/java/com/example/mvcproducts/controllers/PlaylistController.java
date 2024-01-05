@@ -59,7 +59,6 @@ public class PlaylistController {
     public String showPlaylist(Model model, @RequestParam Long pid) {
         DELETE_TEMP = true;
         model.addAttribute("playlistEntry", playlistService.getPlaylistById(pid));
-        model.addAttribute("rating", playlistService.getOverallRating(pid));
         return "playlist/entry";
     }
 

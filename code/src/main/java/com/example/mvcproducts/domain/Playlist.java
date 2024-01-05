@@ -21,6 +21,9 @@ public class Playlist {
     @OneToOne
     private User user;
 
+    @Transient
+    private double totalRating = 0;
+
     public Playlist(String name, String type, String desc, User user) {
         this.name = name;
         this.type = type;
