@@ -481,12 +481,13 @@ button.profilePic {
 }
 /*login and register*/
 .login {
-    height: 100%;
-    width: 960px;
+    height: auto;
+    width: auto;
     margin: auto;
     background-color: black;
     background-image: url("../images/site_img/load.gif");
-    background-position:50% -200%;
+    background-size: 60% 60%;
+    background-position:20vw 40vh;
     background-repeat: no-repeat;
 }
 .login-center {
@@ -517,7 +518,7 @@ button.profilePic {
     align-items: center;
 }
 .form-login{
-    margin-top: 130px;
+    margin-top: 80px;
 }
 .form-group {
     margin-bottom: 15px;
