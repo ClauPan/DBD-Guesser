@@ -1,55 +1,31 @@
-Panait Claudia Oana
+# DBD Geoguesser
+## Introduction
+DBD Geoguesser is a web application inspired by the popular games Dead by Daylight and GeoGuessr. This project combines the horror and thrill elements of Dead by Daylight with the geographical guessing challenges of GeoGuessr. Players are presented with various in-game locations from the maps of Dead by Daylight, and they must guess their in-game locations from the specific area to the name of the realm and the variation of it.
 
-Tudor Ana-Maria
+## Features
+Playlist-Based Gameplay: Players choose from different playlists featuring screenshots from the game and guess where they were taken.
+User and Creator Roles: Users can play the game, while creators can create new playlists for others to play.
+Account Management: Users can change their account details.
+Trivia Game Mode: An additional game mode where players answer trivia questions based on playlists.
 
-Mares Mihai Alexandru
+## Technologies Used
+Spring Boot: Backend framework.
+Thymeleaf: Templating engine for rendering HTML.
+Java: Core programming language.
+HTML/CSS: For structuring and styling the web pages.
+JavaScript: For interactive elements.
+MySQL: Local database for storing user data, playlists, and scores.
+Maven: For project management and build automation.
 
+## Usage
+Access the application: Open a web browser and navigate to http://localhost:8080. Login or create an account.
+Start a game: Choose the type of game you want to play, trivia or guesser. Choose the playlist you want to play.
+Submit your guess: Choose from the dropdown menus of each image the specific the realm, the variation and the specific tile within a map.
+View your score: The score will be shown at the end.
 
-as "user" you can create a "playlist" for the main game
-
-as "user" you can play a "playlist" for the main game
-
-as "user" you can report a "playlist" for the main game
-
-as "user" you can customize your profile page
-
-
-as "admin" you can manage user accounts
-
-as "admin" you can adjust dificulty levels
-
-as "admin" you can delete playlists if needed
-
-as "creator" you can create playlists
-
-to become "creator" you need to earn a certain amount of points on the website
-
-
-when creating a playlist you add images and time constrains
-
-when creating a playlist you add a difficulty 
-
-each playlist has a leaderboard
+## Demo
 
 
-as "player" you go through the desired playlist
-
-as "player" you can rate any played playlist
 
 
-the location guesser game consists of going through all the images in the playlist
 
-the score is based on accuracy of location and time taken
-
-
-=======POSSIBLE EXTRA STUFF======
-
-
-trivia questions about the game
-
-guess the killer by sound
-
-
-===========FIGMA LINK===========
-
-https://www.figma.com/file/2xUpfgHjelAdL5BTJG5eOQ/WAD?t=GKGqx5gsYzobtgBl-6
