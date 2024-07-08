@@ -24,8 +24,23 @@ Submit your guess: Choose from the dropdown menus of each image the specific the
 View your score: The score will be shown at the end.
 
 ## Demo
+<img src="Pictures/Pic_1.png">
 
+<img src="Pictures/Pic_2.png">
 
+<img src="Pictures/Pic_3.png">
+
+<img src="Pictures/Pic_4.png">
+
+<img src="Pictures/Pic_5.png">
+
+<img src="Pictures/Pic_6.png">
+
+<img src="Pictures/Pic_7.png">
+
+<img src="Pictures/Pic_8.png">
+
+<img src="Pictures/Pic_9.png">
 
 
 
